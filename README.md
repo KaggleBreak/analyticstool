@@ -39,7 +39,7 @@
                 |(R) Subsetting & Vocabulary                                       |황현정 | [발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part1/R/3.Subsetting/R_part1_3rd.pdf)
 2015.11.24(화)  |(Excel) CHAPTER 05 한계이익 차트 만들기  CHAPTER 06 영업 성적 분석하기 | 조성옥 | [발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part1/excel/week3/ch.05_%ED%95%9C%EA%B3%84%EC%9D%B4%EC%9D%B5%20%EC%B0%A8%ED%8A%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0_chogyuwon_20151120.pdf)
                 |(SQL) SQL Aggregates [PostgreSQL] | 황종필 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part1/sql/week3_%ED%8F%89%EC%9D%BC/SQL%20for%20PostgreSQL-3.pptx)
-                |(Python) Chapter 2. A Crash Course in Python - Not Basic 부분                                      |송종근 |
+                |(Python) Chapter 2. A Crash Course in Python - Not Basic 부분                                      |송종근 |[발표자료](https://github.com/KaggleBreak/analyticstool/tree/master/part1/python/Week3)
 2015.12.05(토)  |(Excel) CHAPTER 01 예측  CHAPTER 02 함수로 매출 예측하기 | 송영숙 | 
                 |(SQL) 3. DELETE와 UPDATE: 바꾸면 나아질 거예요. | 이정교 |
                 |(R) Style & Functions                                     |임대영 |
