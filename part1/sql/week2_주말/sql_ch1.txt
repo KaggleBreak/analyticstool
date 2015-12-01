@@ -1,0 +1,93 @@
+# DB 생성 및 선택
+CREATE DATABASE gregs_list;
+USE gregs_list;
+
+
+# 테이블 생성
+# 테이블 자료구조 생성 : 열(column)명 및 데이터 형식 정의
+CREATE TABLE `my_contacts` 
+(
+last_name VARCHAR(30),
+first_name VARCHAR(20)
+email_CARCHAR(50),
+birthday DATE,
+profession VARCHAR(50),
+location VARCHAR(50),
+status VARCHAR(20),
+interest VARCHAR(100),
+seeking VARCHAR(100)
+);
+  
+  
+# 테이블 구조 조회
+# Describe 약자
+DESC my_contacts;
+
+
+# Drop - 데이터베이스 테이블 삭제 (데이터 양이 많을 경우 Drop-CREATE가 더 빠름)
+# Delete - 테이블의 데이터 내용 삭제
+Drop TABLE my_contacts;
+
+# To add new columns, create a revised table
+CREATE TABLE my_contacts
+(
+last_name VARCHAR(30),
+first_name VARCHAR(20),
+email VARCHAR(50),
+gender CHAR(1),
+birthday DATE,
+profession VARCHAR(50),
+location VARCHAR(50),
+status VARCHAR(100),
+interests VARCHAR(100),
+seeking VARCHAR(100)
+);
+
+#데이터 값 입력
+Insert INTO my_contacts
+(last_name, first_name, email, gender, birthday, profession, location, status, interests, seeking)
+VALUES 
+('Anderson', 'Jillian', 'jill_anderson@breakneckpizza.net', 'F', '1980-09-05', 'Technical Writer', 'Palo Alto, CA', 'Singles', 'Kayaking, Reptiles', 'Relationship, Friends');
+
+#Variations on an INSERT statement 
+#Changing the order of columns
+INSERT INTO my_contacts
+(interests, first_name, last_name, gender, email, birthday, profession, location, status, seeking)
+VALUES
+('Kayaking, Reptiles', 'Jillian', 'Anderson', 'F', 'jill_anderson@breakneckpizza.net', '1980-09-05', 'Technical Writer', 'Palo Alto, CA', 'Single', 'Relationship, Friends');
+
+#Omitting column names
+INSERT INTO my_contacts
+VALUES
+('Anderson', 'Jillian', 'jill_anderson@breakneckpizza.net', 'F', '1980-09-05', 'Technical Writer', 'Palo Alto, CA', 'Single', 'Kayaking, Reptiles', 'Relationship, Friends');
+
+#Leaving some columns out
+INSERT INTO my_contacts
+(last_name, first_name, email)
+VALUES
+('Anderson', 'Jillian', 'jill_anderson@beckneckpizza.net');
+
+#모든 컬럼 조회
+SELECT * FROM my_contacts;
+
+#Not Null 설정하기
+CREATE TABLE my_contacts
+(
+last_name VARCHAR(30) NOT NULL,
+first_name VARCHAR(20) NOT NULL,
+email VARCHAR(50) NOT NULL,
+gender VARCHAR(1) NOT NULL,
+birthday DATE NOT NULL,
+profession VARCHAR(50) NOT NULL,
+location VARCHAR(50) NOT NULL,
+status VARCHAR(20) NOT NULL,
+seeking VARCHAR(100) NOT NULL
+);
+
+#Degault 값 설정하기
+CREATE TABLE doughnut_list
+( 
+doughnut_name VARCHAR(10) NOT NULL,
+doughnut_type VARCHAR(8) NOT NULL,
+doughnut_cost DEC(3,2) NOT NULL DEFAULT 1.00
+);
