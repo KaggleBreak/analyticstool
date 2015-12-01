@@ -6,11 +6,12 @@
 * https://drive.google.com/drive/folders/0B2l0iH28o85xcHJRNWNUc1FvbEk
 * 장소 : 토즈 강남점 
 * 주말반, 화요일반 격주
+* 스터디 회비는 가입비 1만원 이외 IPA(공개SW 개발자센터)에서 장소를 지원하고 있습니다.
 
 ## 교재
 * (Excel) 교재 - 엑셀 데이터 분석 바이블 (영진닷컴) 
-* (SQL) 교재 - 토요일 교재 head first sql (한빛미디어), 
-* (SQL) 교재 - 화요일 교재 PostgreSQL: Introduction and Concepts (http://momjian.us/main/writings/pgsql/aw_pgsql_book/node2.html) 
+* (SQL) 교재 - 토요일반 교재 head first sql (한빛미디어), 
+* (SQL) 교재 - 화요일반 교재 PostgreSQL: Introduction and Concepts (http://momjian.us/main/writings/pgsql/aw_pgsql_book/node2.html) 
 * (R) 교재 - Advanced R (http://adv-r.had.co.nz/) 
 * (Python) 교재 - Data Science from Scratch: First Principles with Python 1st Edition
 
