@@ -18,6 +18,6 @@
 ## 커리큘럼
     요일        |      주제                              |  발표자 |   발표자료
 ----------------|----------------------------------------|---------|------------
-2015.10.24(화)  |( Excel ) CHAPTER 01 비즈니스 데이터 분석  CHAPTER 02 기본 통계량 | 이상열 | ![발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part1/excel/week1/%EC%BA%90%EA%B8%80%EB%BD%80%EA%B0%9C%EA%B8%B0_%EB%B6%84%EC%84%9D%ED%88%B4_%ED%8C%8C%ED%8A%B81_Chap1,2.pptx)
+2015.10.24(화)  |( Excel ) CHAPTER 01 비즈니스 데이터 분석  CHAPTER 02 기본 통계량 | 이상열 | <https://github.com/KaggleBreak/analyticstool/blob/master/part1/excel/week1/%EC%BA%90%EA%B8%80%EB%BD%80%EA%B0%9C%EA%B8%B0_%EB%B6%84%EC%84%9D%ED%88%B4_%ED%8C%8C%ED%8A%B81_Chap1,2.pptx>
                 |                                        |         |
                 |                                        |         |
