@@ -38,7 +38,40 @@
                 |(R) Subsetting & Vocabulary                                       |황현정 | [발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part1/R/3.Subsetting/R_part1_3rd.pdf)
 2015.11.24(화)  |(Excel) CHAPTER 05 한계이익 차트 만들기  CHAPTER 06 영업 성적 분석하기 | 조성옥 | [발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part1/excel/week3/ch.05_%ED%95%9C%EA%B3%84%EC%9D%B4%EC%9D%B5%20%EC%B0%A8%ED%8A%B8%20%EB%A7%8C%EB%93%A4%EA%B8%B0_chogyuwon_20151120.pdf)
                 |(SQL) SQL Aggregates [PostgreSQL] | 황종필 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part1/sql/week3_%ED%8F%89%EC%9D%BC/SQL%20for%20PostgreSQL-3.pptx)
-                |(Python) Chapter 2. A Crash Course in Python - Not Basic 부분                                      |송종근 | [발표자료]()
+                |(Python) Chapter 2. A Crash Course in Python - Not Basic 부분                                      |송종근 |
+2015.12.05(토)  |(Excel) CHAPTER 01 예측  CHAPTER 02 함수로 매출 예측하기 | 송영숙 | 
+                |(SQL) 3. DELETE와 UPDATE: 바꾸면 나아질 거예요. | 이정교 |
+                |(R) Style & Functions                                     |임대영 |
+2015.12.08(화)  |(Excel) CHAPTER 01 예측  CHAPTER 02 함수로 매출 예측하기 | 최윤원 | 
+                |(SQL) Joining Tables [PostgreSQL] | 황종필 |
+                |(Python) Chapter 3. Visualizing Data                                     |이유진 |
+2015.12.19(토)  |(Excel) CHAPTER 03 트렌드 분석하기   CHAPTER 01 해 찾기 | 조용걸 | 
+                |(SQL) 4. 좋은 테이블 설계: 정규화는 왜 하죠? | 김지현 |
+                |(R) OO field guide & Environments                                     |미정 |
+2015.12.22(화)  |(Excel) CHAPTER 03 트렌드 분석하기   CHAPTER 01 해 찾기 | 미정 | 
+                |(SQL) Numbering Rows [PostgreSQL] | 황종필 |
+                |(Python) Chapter 4. Linear Algebra                                     |미정 |
+2016.01.05(화)  |(Excel) CHAPTER 02 시나리오   CHAPTER 03 목표값 찾기 | 미정 | 
+                |(SQL) Combining SELECTs [PostgreSQL] | 미정 |
+                |(Python) Chapter 5. Statistics                                     |미정 |
+2016.01.09(토)  |(Excel) CHAPTER 02 시나리오   CHAPTER 03 목표값 찾기 | 배세찬 | 
+                |(SQL) 5. ALTER: 과거 다시 쓰기 | 미정 |
+                |(R) Exceptions and debugging & Functional programming                                     |미정 |
+2016.01.19(화)  |(Excel) CHAPTER 04 데이터 분석의 천재 피벗 테이블  CHAPTER 01 상품 특징 분석하기 | 미정 | 
+                |(SQL) Data Types [PostgreSQL] | 미정 |
+                |(Python) Chapter 6. Probability                                     |미정 |
+2016.01.23(토)  |(Excel) CHAPTER 04 데이터 분석의 천재 피벗 테이블  CHAPTER 01 상품 특징 분석하기 | 김승욱 | 
+                |(SQL) 6. 고급 SELECT: 새로운 시각으로 데이터 살펴보기 | 미정 |
+                |(R) Functionals & Function operators                                     |미정 |
+2016.02.02(화)  |(Excel) CHAPTER 02 중점 상품을 결정하고 매출을 올리기 위한 전략 세우기  CHAPTER 03 계절변동비 고려하기 | 미정 | 
+                |(SQL) Transactions and Locks [PostgreSQL] | 미정 |
+                |(Python) Chapter 7. Hypothesis and Inference                                     |최창순 |
+2016.02.06(토)  |(Excel) CHAPTER 02 중점 상품을 결정하고 매출을 올리기 위한 전략 세우기  CHAPTER 03 계절변동비 고려하기 | 미정 | 
+                |(SQL)  7. 테이블이 여러개인 테이블 데이터베이스 설계 | 미정 |
+                |(R) Non-standard evaluation & Expressions                                     |미정 |
+                                                                
+                                
+
 
                 
 
