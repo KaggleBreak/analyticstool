@@ -48,8 +48,8 @@
                 |(SQL) Joining Tables [PostgreSQL] | 황종필 |
                 |(Python) Chapter 3. Visualizing Data                                     |이유진 |
 2015.12.19(토)  |(Excel) CHAPTER 03 트렌드 분석하기   CHAPTER 01 해 찾기 | 조용걸 | 
-                |(SQL) 4. 좋은 테이블 설계: 정규화는 왜 하죠? | 김지현 |
-                |(R) OO field guide & Environments                                     |미정 |
+                |(SQL) 4. 좋은 테이블 설계: 정규화는 왜 하죠? | 미정 |
+                |(R) OO field guide & Environments                                     |이상열 |
 2015.12.22(화)  |(Excel) CHAPTER 03 트렌드 분석하기   CHAPTER 01 해 찾기 | 미정 | 
                 |(SQL) Numbering Rows [PostgreSQL] | 황종필 |
                 |(Python) Chapter 4. Linear Algebra                                     |미정 |
