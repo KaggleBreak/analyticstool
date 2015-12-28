@@ -1,0 +1,69 @@
+
+
+# 테이블생성
+# 기본키 없이 테이블 생성하기
+CREATE TABLE my_contacts
+(
+Last_name VARCHAR(30),
+First_name VARCHAR(20),
+Email VARCHAR(50),
+Gender char(1),
+Birthday DATE,
+Profession VARCHAR(50),
+Location VARCHAR(50),
+Status VARCHAR(20),
+Interests VARCHAR(100),
+Seeking VARCHAR(100)
+);
+
+
+# 기본키가 있는 테이블 생성하기
+CREATE TABLE my_contacts
+(
+Contact_id INT NOT NULL,
+Last_name VARCHAR(30),
+First_name VARCHAR(20),
+Email VARCHAR(50),
+Gender char(1),
+Birthday DATE,
+Profession VARCHAR(50),
+Location VARCHAR(50),
+Status VARCHAR(20),
+Interests VARCHAR(100),
+Seeking VARCHAR(100),
+PRIMARY KEY(contact_id)
+)
+
+
+# 기본키가 자동 증가 하는 테이블 생성하기
+CREATE TABLE my_contacts
+(
+Contact_id INT NOT NULL AUTO_INCREMENT,
+Last_name VARCHAR(30),
+First_name VARCHAR(20),
+Email VARCHAR(50),
+Gender char(1),
+Birthday DATE,
+Profession VARCHAR(50),
+Location VARCHAR(50),
+Status VARCHAR(20),
+Interests VARCHAR(100),
+Seeking VARCHAR(100),
+PRIMARY KEY(contact_id)
+)
+
+
+# 컬럼 추가
+# 기본키 컬럼 추가하기 
+ALTER TABLE my_contacts
+ADD COLUMN contact_id IND NOT NULL AUTO_INCREMENT FIRST,
+ADD PRIMARY KEY (contact_id);
+
+# 테이블 데이터 보기
+SELECT * FROM my_contacts;
+
+
+
+
+
+
