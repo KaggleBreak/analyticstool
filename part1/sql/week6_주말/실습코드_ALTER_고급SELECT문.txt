@@ -1,0 +1,159 @@
+<ALTER>
+
+#### 실습을 위한 준비!!
+CREATE DATABASE test;
+USE test;
+
+#### 테이블 수정예제01(242P)
+CREATE TABLE projekts
+(
+number INT(11),
+descriptionofproj VARCHAR(50),
+contractoronjob VARCHAR(10)
+);
+INSERT INTO projekts
+VALUES
+(1, 'outside house painting', 'Murphy'),
+(2, 'kitchen remodel', 'Valdez'),
+(3, 'wood floor installation', 'Keller'),
+(4, 'roofing', 'Jackson');
+
+※테이블 구성 확인하기
+DESCRIBE projekts;
+DESCRIBE movie_table;
+※테이블 확인하기
+SELECT * FROM projekts;
+SELECT * FROM project_list;
+SELECT * FROM movie_table;
+
+#테이블 이름 바꾸기
+ALTER TABLE projekts
+RENAME TO project_list;
+
+#테이블 열 이름 바꾸기
+ALTER TABLE project_list
+CHANGE COLUMN number proj_id INT NOT NULL AUTO_INCREMENT,
+CHANGE COLUMN descriptionofproj proj_desc VARCHAR(100),
+CHANGE COLUMN contractoronjob con_name VARCHAR(30),
+ADD PRIMARY KEY(proj_id);
+
+#테이블 열 추가하기
+ALTER TABLE project_list
+ADD COLUMN con_phone VARCHAR(10),
+ADD COLUMN start_date DATE,
+ADD COLUMN est_cost DECIMAL(7,2);
+-------------------------------------------------------------
+<고급SELECT문>
+
+CREATE DATABASE test1;
+USE test1;
+
+※테이블 구성 확인하기
+DESCRIBE movie_table;
+
+※테이블 확인하기
+SELECT * FROM movie_table;
+
+#### 테이블 수정예제02(274P)
+CREATE TABLE movie_table
+(
+movie_id INT NOT NULL AUTO_INCREMENT,
+title VARCHAR(50), rating VARCHAR(2), drama VARCHAR(1),
+comedy VARCHAR(1), action VARCHAR(1),
+gore VARCHAR(1), scifi VARCHAR(1),
+for_kids VARCHAR(1), cartoon VARCHAR(1),
+pruchased DATE,
+PRIMARY KEY(movie_id));
+INSERT INTO movie_table
+VALUES
+(1, 'Monsters,Inc.', 'G','F','T','F','F','F','T','T','2002-03-06'),
+(2, 'The Godfather', 'R','F','F','T','T','F','F','F','2002-02-05'),
+(3, 'Gone with the wind', 'G','T','F','F','F','F','F','F','1999-11-20'),
+(4, 'American Pie', 'R','F','T','F','F','F','F','F','2003-04-19');
+
+#카테고리 분류하기 방법1
+ALTER TABLE movie_table
+ADD COLUMN category VARCHAR(10);
+UPDATE movie_table SET category = 'drama' where drama ='T';
+UPDATE movie_table SET category = 'comedy' where comedy ='T';
+UPDATE movie_table SET category = 'action' where action ='T';
+UPDATE movie_table SET category = 'horror' where gore ='T';
+UPDATE movie_table SET category = 'scifi' where scifi ='T';
+UPDATE movie_table SET category = 'family' where for_kids ='T';
+UPDATE movie_table SET category = 'family' where cartoon ='T' AND rating='G';
+UPDATE movie_table SET category = 'misc' where cartoon ='T' AND rating <>'G';
+
+#열버리기
+ALTER TABLE movie_table
+DROP COLUMN category;
+
+#CASE문을 이용해 카테고리 분류하기
+ALTER TABLE movie_table
+ADD COLUMN category VARCHAR(10);
+UPDATE movie_table
+SET category=
+CASE
+  WHEN drama ='T' THEN 'drama'
+  WHEN comedy ='T' THEN 'comedy'
+  WHEN action ='T' THEN 'drama' 
+  WHEN gore ='T' THEN 'gore'
+  WHEN scifi ='T' THEN 'scifi'
+  WHEN for_kids ='T' THEN 'family'
+  WHEN  cartoon ='T' AND rating = 'G' THEN 'family'
+  ELSE 'MISC'
+END;
+#필요없는 열 지우기
+ALTER TABLE movie_table 
+DROP COLUMN drama, DROP COLUMN comedy, DROP COLUMN action,
+DROP COLUMN gore, DROP COLUMN scifi, DROP COLUMN for_kids,
+DROP COLUMN cartoon;
+
+#### ORDER BY로 정리하기
+SELECT title, category 
+FROM movie_table
+WHERE
+category='drama'
+ORDER BY title;
+
+#### 그룹함수_예제(307p)
+
+CREATE DATABASE test2;
+USE test2;
+
+CREATE TABLE cookie_sales
+(
+id INT NOT NULL AUTO_INCREMENT,
+first_name VARCHAR(10),
+sales  dou,
+sale_date DATE,
+PRIMARY KEY(id));
+INSERT INTO cookie_sales
+VALUES
+(1, 'Lindsay', '32.02','2007-03-06'),
+(2, 'Paris', '26.53','2007-03-06'),
+(3, 'Britney', '11.25','2007-03-06'),
+(4, 'Nicole', '18.96','2007-03-06'),
+(5, 'Lindsay', '9.16','2007-03-07'),
+(6, 'Paris', '1.52','2007-03-07'),
+(7, 'Britney', '43.21','2007-03-07'),
+(8, 'Nicole', '8.05','2007-03-07'),
+(9, 'Lindsay', '17.62','2007-03-08'),
+(10, 'Paris', '24.19','2007-03-08'),
+(12, 'Britney', '3.40','2007-03-08');
+
+#합과 평균
+SELECT first_name, SUM(sales), AVG(sales), COUNT(sales)
+FROM cookie_sales
+GROUP BY first_name
+ORDER BY 2 DESC
+LIMIT 2;
+
+#최대와 최소
+SELECT first_name, MAX(sales), MIN(sales)
+FROM cookie_sales
+GROUP BY first_name;
+
+#중복제거
+SELECT DISTINCT sale_date
+FROM cookie_sales
+ORDER BY sale_date;
