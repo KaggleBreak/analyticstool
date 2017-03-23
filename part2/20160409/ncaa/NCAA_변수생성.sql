@@ -45,26 +45,7 @@ select COUNT(*)
 from #2015
 where ["season"] = teamyear
 
-select season, wteam, COUNT(*) ½Â¸®È½¼ö
-into #½Â¸®ÆÀ
-from [bi_itemp].[dbo].[RegularSeasonDetailedResults]
-group by season, wteam
-
-select season, lteam, COUNT(*) ÆÐ¹èÈ½¼ö
-into #ÆÐ¹èÆÀ
-from [bi_itemp].[dbo].[RegularSeasonDetailedResults]
-group by season, lteam
-
-select t.*, cast(t.½Â¸®È½¼ö as numeric)/(t.½Â¸®È½¼ö+t.ÆÐ¹èÈ½¼ö) ½Â·ü
-into #½Â·ü
-from(
-select a.season, a.wteam as team, a.½Â¸®È½¼ö, b.ÆÐ¹èÈ½¼ö
-from #½Â¸®ÆÀ a
-left join #ÆÐ¹èÆÀ b
-on a.season = b.season
-and a.wteam = b.lteam
-)t
-
+I
 drop table #teamall
 
 select a.*, isnull(b.["final"],'"etc"') as wfinal_last1
