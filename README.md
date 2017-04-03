@@ -27,5 +27,5 @@
 |2017.03.27(월)|(Python 중급) 장고걸스 튜토리얼 1   |이상열   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part3/Python/Django/Django%20Girls%20Tutorial%201.ipynb)   |   |
 |2017.04.03(월)|(R 기초) 4 Workflow : basics   |김태영   |   |   |
 |2017.04.03(월)|(Python 기초) A Byte of Python 1~9장 기초 설명   |이상열   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part3/Python/byteofpython/A%20Byte%20of%20Python%201_9.ipynb)  |   |
-|2017.04.03(월)|(R 중급) Layout the user interface   |이상열  | |   |
+|2017.04.03(월)|(R 중급) Layout the user interface   |이상열  |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part3/R/0403/LESSON%202_Build%20a%20user-interface.ipynb) ||
 |2017.04.03(월)|(Python 중급) 장고걸스 튜토리얼 2 (Django 모델, 관리자, 배포하기)  |정원석   |   |   |
