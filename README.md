@@ -33,4 +33,9 @@
 |2017.04.10(월)|(Python 기초) A Byte of Python 10~14장 요약   |송영숙   | |   |
 |2017.04.10(월)|(R 중급) Add control widgets   |김승욱  |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part3/R/0410_widgets/all_buttons_in_shiny.R) ||
 |2017.04.10(월)|(Python 중급) 장고걸스 튜토리얼 3 (Django URL, 뷰만들기, HTML 시작하기)  |신민정   |   |   |
+|2017.04.17(월)|(R 기초) 6. Workflow : scripts (R 기초) 7. Exploratory Data Analysis   |조희주   |   |   |
+|2017.04.17(월)|(Python) numpy / pandas 기초   |조응태   |   |   |
+|2017.04.17(월)|(Network) 1 Food Webs  |이상열   |   |   |
+|2017.04.17(월)|(R 중급) Display reactive output   |김승욱   |   |   |
+|2017.04.17(월)|(Python 중급) 장고걸스 튜토리얼 4 (Django ORM과 QuerySets, 템플릿의 동적 데이터, Django 템플릿)   |유민규   |   |   |
 
