@@ -30,7 +30,7 @@
 |2017.04.03(월)|(R 중급) Layout the user interface   |이상열  |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part3/R/0403/LESSON%202_Build%20a%20user-interface.ipynb) ||
 |2017.04.03(월)|(Python 중급) 장고걸스 튜토리얼 2 (Django 모델, 관리자, 배포하기)  |정원석   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part3/Python/Django/Django%20Girls%20Tutorial2.pdf)   |   |
 |2017.04.10(월)|(R 기초) 5. Data transformation   |김지현   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part3/R/0410_transformation/5_data_transformation.pdf)   |   |
-|2017.04.10(월)|(Python 기초) A Byte of Python 10~14장 요약   |송영숙   | |   |
+|2017.04.10(월)|(Python 기초) A Byte of Python 10~14장 요약   |송영숙   |[발표자료](ithub.com/KaggleBreak/analyticstool/blob/master/part3/Python/byteofpython/byteofpython1014.ipynb) |   |
 |2017.04.10(월)|(R 중급) Add control widgets   |김승욱  |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part3/R/0410_widgets/all_buttons_in_shiny.R) ||
 |2017.04.10(월)|(Python 중급) 장고걸스 튜토리얼 3 (Django URL, 뷰만들기, HTML 시작하기)  |신민정   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part3/Python/Django/django_mtv.pdf)  |   |
 |2017.04.17(월)|(R 기초) 6. Workflow : scripts (R 기초) 7. Exploratory Data Analysis   |조희주   |   |   |
