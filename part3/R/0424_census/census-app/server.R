@@ -1,5 +1,7 @@
 library("maps")
 library("mapproj")
+
+#setwd('/Users/syleeie/analyticstool/part3')
 counties = readRDS("data/counties.rds")
 source("helpers.R")
 
