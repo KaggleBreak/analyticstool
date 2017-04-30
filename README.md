@@ -38,7 +38,6 @@
 |2017.04.17(월)|(Network) 1 Food Webs  |이상열   |[발표자료](b.com/KaggleBreak/analyticstool/blob/master/part3/Network/1.%20Food%20Webs.ipynb)   |   |
 |2017.04.17(월)|(R 중급) Display reactive output   |김승욱   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part3/R/0417_Reactive/ui.R)   |   |
 |2017.04.17(월)|(Python 중급) 장고걸스 튜토리얼 4 (Django ORM과 QuerySets, 템플릿의 동적 데이터, Django 템플릿)   |유민규   |   |   |
-
 |2017.04.24(월)|(R 기초) 6. Workflow : scripts (R 기초) 7. Exploratory Data Analysis |조희주   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part3/R/0424_EDA/6-7.Workflow-EDA.pptx)   |   |
 |2017.04.24(월)|(Python) pandas 기초  |조응태   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part3/Python/nppd/etc%20-%202.%20Getting%20Started%20with%20pandas.ipynb)  |   |
 |2017.04.24(월)|(R 중급) Use R scripts and data  |김승욱   |[발표자료](https://github.com/KaggleBreak/analyticstool/tree/master/part3/R/0424_census)   |   |
