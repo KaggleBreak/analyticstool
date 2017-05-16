@@ -15,7 +15,7 @@
 * 웹을 위한 머신러닝 (http://www.yes24.com/24/Goods/37151418?Acode=101)
 * Bayesian Statistics : Techniques and Models (https://www.coursera.org/learn/mcmc-bayesian-statistics)
 
-(preivos)
+## (preivos)
 ~~* Kaggle Kernel 따라하기 (https://www.kaggle.com/kernels)~~
 ~~* A Byte of Python (http://byteofpython-korean.sourceforge.net/byte_of_python.html)~~
 ~~* 장고걸스 튜토리얼 (https://tutorial.djangogirls.org/ko/)~~
