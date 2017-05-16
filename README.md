@@ -16,9 +16,9 @@
 * Bayesian Statistics : Techniques and Models (https://www.coursera.org/learn/mcmc-bayesian-statistics)
 
 ### preivos 교재
-~~*1 Kaggle Kernel 따라하기 (https://www.kaggle.com/kernels)~~
-~~*2 A Byte of Python (http://byteofpython-korean.sourceforge.net/byte_of_python.html)~~
-~~*3 장고걸스 튜토리얼 (https://tutorial.djangogirls.org/ko/)~~
+~~* Kaggle Kernel 따라하기 (https://www.kaggle.com/kernels)~~
+~~* A Byte of Python (http://byteofpython-korean.sourceforge.net/byte_of_python.html)~~
+~~* 장고걸스 튜토리얼 (https://tutorial.djangogirls.org/ko/)~~
 
 
 ## Part4 커리큘럼
