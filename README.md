@@ -26,7 +26,7 @@
 |요일   |주제   |발표자   |발표자료   |   |
 |---|---|---|---|---|
 |2017.05.17(수)|(R 중급) 8/9/10 Workflow : projects ~ Tibbles |김승욱   |
-||(Python) Data Wrangling & Aggreagtion |조응태   |
+||(Python) Data Wrangling & Aggreagtion |조응태   |[발표자료]()
 ||(Network) 1 Food Webs (2)|이상열   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part3/Network/book_1/1.%20Food%20Webs.ipynb)
 ||(Shiny) Use reactive expressions |김승욱   |
 ||(웹 머신러닝) 4장 웹 마이닝 기법 |정광윤   |
