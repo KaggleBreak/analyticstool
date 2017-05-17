@@ -25,7 +25,7 @@
 ## Part4 커리큘럼
 |요일   |주제   |발표자   |발표자료   |   |
 |---|---|---|---|---|
-|2017.05.17(수)|(R 중급) 8/9/10 Workflow : projects ~ Tibbles |김승욱   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/R/analytics/20170517/R4DS_8_9_10_김승욱_170518.pptx
+|2017.05.17(수)|(R 중급) 8/9/10 Workflow : projects ~ Tibbles |김승욱   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/R/analytics/20170517/R4DS_8_9_10_김승욱_170518.pptx)
 ||(Python) Data Wrangling & Aggreagtion |조응태   |[발표자료]()
 ||(Network) 1 Food Webs (2)|이상열   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/review/Bayesian%20Statistics%20Course%20Overview.ipynb)
 ||(Shiny) Use reactive expressions |김승욱   |[발표자료](https://github.com/KaggleBreak/analyticstool/tree/master/part4/R/shiny/20170517)
