@@ -33,7 +33,7 @@
 ||(베이지안) Course Overview   |이상열   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/review/Bayesian%20Statistics%20Course%20Overview.ipynb)
 |2017.05.24(수)|(R 중급) 11/12 Data Import ~ Tidy Data |정용환   |
 ||(Network) 2 International Trade Networks and World Trade Web (1) |김가경   |
-||(베이지안) Course Overview (2) & Statistical modeling and Monte Carlo estimation (1)|이상열   |
+||(베이지안) Statistical modeling and Monte Carlo estimation (1)|이상열   |
 ||(웹 머신러닝) 4장 웹 마이닝 기법 |정광윤   |
 
 
