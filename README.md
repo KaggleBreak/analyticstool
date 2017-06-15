@@ -39,6 +39,10 @@
 ||(Network) 2 International Trade Networks and World Trade Web (2) |김가경   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Network/20170524/2.%20International%20Trade%20Networks%20and%20World%20Trade%20Web.ipynb)
 ||(베이지안) 2. Markov chain Monte Carlo (MCMC)|이상열   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/week2/week2_mcmc.ipynb)
 ||(웹 머신러닝) 4장 웹 마이닝 기법(2) |정광윤   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/WebML/20170524/chapter04_web_mining.ipynb)
+|2017.06.14(수)|(R 중급) 13/14 Relational data & Strings
+ |권미현   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/R/analytics/20170614/170614_relational_data_strings.html)
+||(Network) (Network) 3. The Internet Network (1) |조응태   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Network/20170614/III%20Internet/03%20-%20The%20Internet%20Network.ipynb)
+||(웹 머신러닝) 5장 추천시스템 (1)|김가경   |
 
 
 
