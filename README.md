@@ -25,23 +25,23 @@
 ## Part4 커리큘럼
 |요일   |주제   |발표자   |발표자료   |   |
 |---|---|---|---|---|
-|2017.05.17(수)|(R 중급) 8/9/10 Workflow : projects ~ Tibbles |김승욱   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/R/analytics/20170517/R4DS_8_9_10_김승욱_170518.pptx)
-||(Python) Data Wrangling & Aggreagtion |조응태   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Python/etc.04-Data%20Wrangling.ipynb)
+|2017.05.17(수)|(R 중급) 8/9/10 Workflow : projects ~ Tibbles |김승욱|[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/R/analytics/20170517/R4DS_8_9_10_김승욱_170518.pptx)
+||(Python) Data Wrangling & Aggreagtion |조응태 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Python/etc.04-Data%20Wrangling.ipynb)
 ||(Network) 1 Food Webs (2)|이상열   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Network/20170517/1.%20Food%20Webs.ipynb)
 ||(Shiny) Use reactive expressions |김승욱   |[발표자료](https://github.com/KaggleBreak/analyticstool/tree/master/part4/R/shiny/20170517)
-||~~(웹 머신러닝) 4장 웹 마이닝 기법~~ |~~정광윤~~   |
-||(베이지안) Course Overview * Statistical modeling and Monte Carlo estimation |이상열   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/review/Bayesian%20Statistics%20Course%20Overview.ipynb)
-|2017.05.24(수)|(R 중급) 11/12 Data Import ~ Tidy Data |정용환   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/R/analytics/20170524/Study_Part4_Import_Tidy.html)
-||(Network) 2 International Trade Networks and World Trade Web (1) |김가경   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Network/20170524/2.%20International%20Trade%20Networks%20and%20World%20Trade%20Web.ipynb)
-||(베이지안) Statistical modeling and Monte Carlo estimation (1)|이상열   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/review/Bayesian%20Statistics%20Course%20Overview.ipynb)
-||(웹 머신러닝) 4장 웹 마이닝 기법(1) |정광윤   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/WebML/20170524/chapter04_web_mining.ipynb)
-|2017.05.31(수)|(R 중급) 11/12 Data Import ~ Tidy Data |정용환   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/R/analytics/20170524/Study_Part4_Import_Tidy.html)
-||(Network) 2 International Trade Networks and World Trade Web (2) |김가경   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Network/20170524/2.%20International%20Trade%20Networks%20and%20World%20Trade%20Web.ipynb)
-||(베이지안) 2. Markov chain Monte Carlo (MCMC)|이상열   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/week2/week2_mcmc.ipynb)
-||(웹 머신러닝) 4장 웹 마이닝 기법(2) |정광윤   |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/WebML/20170524/chapter04_web_mining.ipynb)
+||~~(웹 머신러닝) 4장 웹 마이닝 기법~~ |~~정광윤~~ |
+||(베이지안) Course Overview * Statistical modeling and Monte Carlo estimation |이상열 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/review/Bayesian%20Statistics%20Course%20Overview.ipynb)
+|2017.05.24(수)|(R 중급) 11/12 Data Import ~ Tidy Data |정용환|[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/R/analytics/20170524/Study_Part4_Import_Tidy.html)
+||(Network) 2 International Trade Networks and World Trade Web (1) |김가경 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Network/20170524/2.%20International%20Trade%20Networks%20and%20World%20Trade%20Web.ipynb)
+||(베이지안) Statistical modeling and Monte Carlo estimation (1)|이상열|[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/review/Bayesian%20Statistics%20Course%20Overview.ipynb)
+||(웹 머신러닝) 4장 웹 마이닝 기법(1) |정광윤|[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/WebML/20170524/chapter04_web_mining.ipynb)
+|2017.05.31(수)|(R 중급) 11/12 Data Import ~ Tidy Data |정용환|[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/R/analytics/20170524/Study_Part4_Import_Tidy.html)
+||(Network) 2 International Trade Networks and World Trade Web (2) |김가경|[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Network/20170524/2.%20International%20Trade%20Networks%20and%20World%20Trade%20Web.ipynb)
+||(베이지안) 2. Markov chain Monte Carlo (MCMC)|이상열 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/week2/week2_mcmc.ipynb)
+||(웹 머신러닝) 4장 웹 마이닝 기법(2) |정광윤|[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/WebML/20170524/chapter04_web_mining.ipynb)
 |2017.06.14(수)|(R 중급) 13/14 Relational data & Strings|권미현 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/R/analytics/20170614/170614_relational_data_strings.html)
 ||(Network) (Network) 3. The Internet Network (1) |조응태 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Network/20170614/III%20Internet/03%20-%20The%20Internet%20Network.ipynb)
-||(웹 머신러닝) 5장 추천시스템 (1)|김가경   |
+||(웹 머신러닝) 5장 추천시스템 (1)|김가경 |
 |2017.06.21(수)|(R 중급) 15/16 Factors/Dates and times|이상열 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/R/analytics/20170621/15_16_Factors_Dates.ipynb)
 ||(Network) (Network) 3. The Internet Network (1) |조응태 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Network/20170614/III%20Internet/03%20-%20The%20Internet%20Network.ipynb)
 ||(베이지안) 3. Common statistical models (1)|이상열 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/week3/week3_common.ipynb)
