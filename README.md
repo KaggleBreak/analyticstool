@@ -45,7 +45,7 @@
 |2017.06.21(수)|(R 중급) 15/16 Factors/Dates and times|이상열 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/R/analytics/20170621/15_16_Factors_Dates.ipynb)
 ||(Network) (Network) 3. The Internet Network (1) |조응태 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Network/20170614/III%20Internet/03%20-%20The%20Internet%20Network.ipynb)
 ||(베이지안) 3. Common statistical models (1)|이상열 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/week3/week3_common.ipynb)
-||(웹 머신러닝) 5장 추천시스템 (1)|김가경   |
+||(웹 머신러닝) 5장 추천시스템 (1)|김가경 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/WebML/20170621/5.%20%EC%B6%94%EC%B2%9C%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20(Recommendation%20system).ipynb)
 
 
 
