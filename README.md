@@ -47,7 +47,7 @@
 ||(베이지안) 3. Common statistical models (1)|이상열 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/week3/week3_common.ipynb)
 ||(웹 머신러닝) 5장 추천시스템 (1)|김가경 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/WebML/20170621/5.%20%EC%B6%94%EC%B2%9C%20%EC%8B%9C%EC%8A%A4%ED%85%9C%20(Recommendation%20system).ipynb)
 |2017.06.28(수)|(R 중급) 17/18/19 Introductions/pipe/Functions|이규영 |
-||(Network) 4, World Wide Web, Wikipedia, and Social Networks(1) |조응태 |
+||(Network) 4, World Wide Web, Wikipedia, and Social Networks(1) |조응태 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Network/20170628/IV%20WWW%2C%20Wikipedia%2C%20and%20Social%20Networks/4.%20WWW%2C%20Wikipedia%2C%20and%20Social%20Networks.ipynb)
 ||(베이지안) 3. Common statistical models (2)|이상열 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/week3/week3_common.ipynb)
 
 
