@@ -49,6 +49,9 @@
 |2017.06.28(수)|(R 중급) 17/18/19 Introductions/pipe/Functions|이규영 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/R/analytics/20170628/kaggle%20Study.pptx)
 ||(Network) 4, World Wide Web, Wikipedia, and Social Networks(1) |조응태 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Network/20170628/IV%20WWW%2C%20Wikipedia%2C%20and%20Social%20Networks/4.%20WWW%2C%20Wikipedia%2C%20and%20Social%20Networks.ipynb)
 ||(베이지안) 3. Common statistical models (2)|이상열 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/week3/week3_common.ipynb)
+|2017.07.05(수)|(R 중급) 20/21 Vectors/Iterations |심상진 |
+||(웹 머신러닝) 6장 장고 시작 |조응태 |
+||(베이지안) 3. Common statistical models (3)|이상열 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/week3/week3_common.ipynb)
 
 
 
