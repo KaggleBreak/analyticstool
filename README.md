@@ -50,7 +50,7 @@
 ||(Network) 4, World Wide Web, Wikipedia, and Social Networks(1) |조응태 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Network/20170628/IV%20WWW%2C%20Wikipedia%2C%20and%20Social%20Networks/4.%20WWW%2C%20Wikipedia%2C%20and%20Social%20Networks.ipynb)
 ||(베이지안) 3. Common statistical models (2)|이상열 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/week3/week3_common.ipynb)
 |2017.07.05(수)|(R 중급) 20/21 Vectors/Iterations |심상진 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/R/analytics/20170705/VectorsAndIteratorsI.pptx)
-||(웹 머신러닝) 6장 장고 시작 |조응태 |
+||(웹 머신러닝) 6장 장고 시작 |조응태 |[발표자료](https://github.com/KaggleBreak/analyticstool/tree/master/part4/WebML/20170705)
 ||(베이지안) 3. Common statistical models (3)|이상열 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/week3/week3_common.ipynb)
 
 
