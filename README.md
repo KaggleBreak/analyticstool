@@ -1,6 +1,6 @@
 # 캐글즐기기 (2017년 새시작)
 
-캐글뽀개기 파트4 주말/평일반 스터디 자료모음
+캐글뽀개기 파트4 평일반 스터디 자료모음
 
 * https://www.facebook.com/groups/kagglebreak/
 * https://drive.google.com/drive/folders/0B2l0iH28o85xcHJRNWNUc1FvbEk
