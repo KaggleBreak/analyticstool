@@ -1,0 +1,1070 @@
+---
+title: "R for Data Science - Model Building / Many Models"
+output: html_notebook
+---
+
+## 24. Model building
+
+### 24. Introduction
+- 이전 장에서는 선형 모델의 작동 방식을 배웠고 모델이 데이터에 대해 무엇을 말하고 있는지 이해할 수 있는 기본 도구를 배웠습니다. 이전 장에서는 시뮬레이션 된 데이터 세트에 중점을 두었습니다. 
+
+- 이 장에서는 실제 데이터에 중점을두고 데이터 이해를 돕기 위해 점진적으로 모델을 구축하는 방법을 보여줍니다.
+
+- 데이터를 패턴 및 잔차로 분할하는 모델에 대해 생각할 수 있다는 사실을 이용합니다. 
+
+- 시각화를 통해 패턴을 찾은 다음 모델을 사용하여 패턴을 구체적이고 정확하게 만듭니다. 
+
+- 그런 다음 프로세스를 반복하되 이전 응답 변수를 모델의 잔차로 대체합니다. 
+
+- 목표는 데이터의 내재적 지식에서 머리를 양적 모델의 명시적 지식으로 전환하는 것입니다. 이렇게하면 새 도메인에 쉽게 적용 할 수 있고 다른 도메인에서는 쉽게 사용할 수 있습니다.
+
+- 매우 크고 복잡한 데이터 세트의 경우 많은 작업이 필요합니다. 확실히 대안적인 접근 방식이 있습니다. 
+
+- 더 많은 기계 학습 방식은 단순히 모델의 예측 능력에 초점을 맞추는 것입니다. 이러한 접근 방식은 블랙 박스를 생성하는 경향이 있습니다. 
+
+- 모델은 예측을 생성하는 데 실제로 도움이되지만 실제로 이유를 알지 못합니다. 이것은 완전히 합리적인 접근 방식이지만 실제 지식을 모델에 적용하는 것을 어렵게 만듭니다. 
+- 그 결과, 펀더멘털이 변함에 따라 모델이 장기간에 걸쳐 계속해서 작동 할 것인가를 평가하는 것이 어려워집니다. 
+
+- 대부분의 실제 모델에서는 이 접근 방식과보다 고전적인 자동화 된 접근 방식을 조합하여 사용할 것을 기대합니다.
+
+- 멈추어야 할 때를 알기 란 쉽지 않습니다. 당신은 당신의 모델이 충분히 좋은 시점과 추가적인 투자가 성사 될 것 같지 않은 때를 알아 내야합니다. 
+
+### 24.1.1 Prerequisites
+
+- 이전 장에서 사용한 도구와 동일한 도구를 사용하지만 실제 데이터 세트 (ggplot2의 다이아몬드 및 nycflights13의 항공편)를 추가합니다. 
+
+- 또한 항공편의 날짜 / 시간을 사용하려면 lubridate가 필요합니다.
+
+```{r}
+library(tidyverse)
+library(modelr)
+options(na.action = na.warn)
+
+library(nycflights13)
+library(lubridate)
+```
+
+
+### 24.2 Why are low quality diamonds more expensive?
+
+- 이전 장에서 우리는 다이아몬드의 품질과 그 가격 사이의 놀라운 관계를 보았습니다 
+
+- 품질이 낮은 다이아몬드 (빈약 한 컷, 나쁜 색상 및 열등한 선명도)는 가격이 높습니다.
+
+```{r}
+ggplot(diamonds, aes(cut, price)) + geom_boxplot()
+ggplot(diamonds, aes(color, price)) + geom_boxplot()
+ggplot(diamonds, aes(clarity, price)) + geom_boxplot()
+```
+
+- 최악의 다이아몬드 색상은 J (약간 노란색)이며 최악의 선명도는 I1 (육안으로 볼 수있는 개재물)입니다.
+
+### 24.2.1 Price and carat
+- 중요한 교란 변수인 다이아몬드의 무게 (캐럿)가 있기 때문에 품질이 낮은 다이아몬드가 더 높은 가격을 갖는 것처럼 보입니다. 
+
+- 다이아몬드의 무게는 다이아몬드의 가격을 결정하는 가장 중요한 요소이며, 품질이 낮은 다이아몬드는 더 큰 경향이 있습니다.
+
+```{r}
+ggplot(diamonds, aes(carat, price)) + 
+  geom_hex(bins = 50)
+```
+
+- 우리는 다이아몬드의 다른 속성이 캐럿의 효과를 분리하는 모델을 피팅함으로써 상대적인 가격에 어떻게 영향을 미치는지 쉽게 알 수 있습니다. 
+
+- 하지만 먼저 다이아몬드 데이터 세트를 조작하여 작업하기 쉽도록 두 번 조정하십시오.
+
+- 캐럿 미만의 다이아몬드에 집중 (데이터의 99.7 %)
+
+- 캐럿 및 가격 변수를 로그 변환합니다.
+
+```{r}
+diamonds2 <- diamonds %>% 
+  filter(carat <= 2.5) %>% 
+  mutate(lprice = log2(price), lcarat = log2(carat))
+
+ggplot(diamonds2, aes(lcarat, lprice)) + 
+  geom_hex(bins = 50)
+```
+
+- 로그 변환은 패턴을 선형으로 만들고 선형 패턴을 사용하기 쉽기 때문에 특히 유용합니다. 
+
+- 다음 단계를 밟아 강렬한 선형 패턴을 제거해 봅시다. 먼저 모델을 피팅하여 패턴을 명시 적으로 만듭니다.
+
+```{r}
+mod_diamond <- lm(lprice ~ lcarat, data = diamonds2)
+
+grid <- diamonds2 %>% 
+  data_grid(carat = seq_range(carat, 20)) %>% 
+  mutate(lcarat = log2(carat)) %>% 
+  add_predictions(mod_diamond, "lprice") %>% 
+  mutate(price = 2 ^ lprice)
+
+ggplot(diamonds2, aes(carat, price)) + 
+  geom_hex(bins = 50) + 
+  geom_line(data = grid, colour = "red", size = 1)
+```
+
+- 다음 모델이 데이터에 대해 알려주는 것을 봅니다. 로그 변환을 실행 취소하여 예측을 역으로 변환하므로 원시 데이터에 예측을 오버레이 할 수 있습니다.
+
+- 우리 데이터에 대해 흥미로운 것을 알려줍니다. 모델을 믿는다면 큰 다이아몬드는 예상보다 훨씬 저렴합니다. 
+
+- 이것은 아마도 이 데이터 세트의 다이아몬드가 1 만 9 천 달러가 들지 않기 때문일 것입니다.
+
+- 이제 우리는 강한 선형 패턴을 성공적으로 제거했는지 확인하는 잔차를 볼 수 있습니다.
+
+```{r}
+diamonds2 <- diamonds2 %>% 
+  add_residuals(mod_diamond, "lresid")
+
+ggplot(diamonds2, aes(lcarat, lresid)) + 
+  geom_hex(bins = 50)
+```
+
+- 중요한 것은 이제 가격 대신 잔차를 사용하여 motivating plots을 다시 할 수 있다는 것입니다.
+
+```{r}
+ggplot(diamonds2, aes(cut, lresid)) + geom_boxplot()
+ggplot(diamonds2, aes(color, lresid)) + geom_boxplot()
+ggplot(diamonds2, aes(clarity, lresid)) + geom_boxplot()
+```
+
+- 우리는 우리가 기대하는 관계를 봅니다 : 다이아몬드의 품질이 높아질수록 상대적인 가격도 높아집니다. 
+
+- y 축을 해석하기 위해, 우리는 잔차가 우리에게 말하는 것과 그것들이 어떤 스케일인지 생각할 필요가있다. 
+
+### 24.2.2 A more complicated model
+
+- 원한다면 모델을 계속 구축하여 관찰된 효과를 모델로 이동시켜 모델을 명시 적으로 만들 수 있습니다. 
+
+- 예를 들어 모델에 색상, 컷 및 선명도를 포함시켜 이러한 3 가지 범주 형 변수의 효과를 명시 할 수 있습니다.
+
+```{r}
+mod_diamond2 <- lm(lprice ~ lcarat + color + cut + clarity, data = diamonds2)
+```
+
+- 이 모델에는 이제 4 개의 예측 변수가 포함되므로 시각화하는 것이 어려워집니다. 
+- 다행히도, 그들은 현재 모두 독립되어 있어 4 개의 플롯으로 개별적으로 그릴 수 있습니다. 
+
+- 프로세스를 좀더 쉽게하기 위해, 우리는 data_grid에 .model 인자를 사용할 것입니다 
+```{r}
+grid <- diamonds2 %>% 
+  data_grid(cut, .model = mod_diamond2) %>% 
+  add_predictions(mod_diamond2)
+grid
+
+ggplot(grid, aes(cut, pred)) + 
+  geom_point()
+```
+
+- 모델에 명시적으로 제공하지 않은 변수가 필요한 경우 data_grid ()는 자동으로 이를 "일반"값으로 채 웁니다. 
+
+- 연속 변수의 경우 중앙값을 사용하고 범주형 변수는 가장 일반적인 값을 사용합니다.
+
+```{r}
+diamonds2 <- diamonds2 %>% 
+  add_residuals(mod_diamond2, "lresid2")
+
+ggplot(diamonds2, aes(lcarat, lresid2)) + 
+  geom_hex(bins = 50)
+```
+
+- 이 그래프는 상당히 큰 잔차가있는 일부 다이아몬드가 있음을 나타냅니다. 
+
+- 잔차 2는 다이아몬드가 예상했던 가격의 4배라는 것을 나타냅니다. 
+
+- 비정상적인 값을 개별적으로 보는 것이 종종 유용합니다.
+
+```{r}
+diamonds2 %>% 
+  filter(abs(lresid2) > 1) %>% 
+  add_predictions(mod_diamond2) %>% 
+  mutate(pred = round(2 ^ pred)) %>% 
+  select(price, pred, carat:table, x:z) %>% 
+  arrange(price)
+```
+
+- 여기에 나와 있는 것은 없지만, 이것이 모델에 문제가 있는지 또는 데이터에 오류가 있는지를 고려해 볼 때 시간을 할 가치가 있습니다. 
+
+- 데이터에 실수가 있는 경우 이는 잘못 낮은 가격으로 책정 된 다이아몬드를 구매할 수있는 기회가 될 수 있습니다.
+
+
+### 24.2.3 Exercises (생략)
+
+### 24.3 What affects the number of daily flights?
+
+- 언뜻 보기에 NYC를 떠나는 항공편의 수보다 훨씬 단순한 데이터 세트에 대해서도 유사한 프로세스를 진행해 보겠습니다. 
+- 이 모델은 365 개의 행과 2 개의 열만있는 아주 작은 데이터 세트입니다. 완전히 실현된 모델로 끝나지는 않을 것입니다.
+
+- 하지만 알 수 있듯이 이 단계는 데이터를 더 잘 이해하는 데 도움이됩니다. 하루에 비행 수를 계산하고 ggplot2로 시각화 해 봅시다.
+
+```{r}
+library(nycflights13)
+library(lubridate)
+data(flights)
+daily <- flights %>% 
+  mutate(date = make_date(year, month, day)) %>% 
+  group_by(date) %>% 
+  summarise(n = n())
+daily
+
+ggplot(daily, aes(date, n)) + 
+  geom_line()
+```
+
+### 24.3.1 Day of week
+
+- 장기 경향을 이해하는 것은 어려운 일입니다. 
+
+- 그 이유는 미묘한 패턴을 지배하는 매우 강한 요일 효과가 있기 때문입니다. 요일별 항공편 번호 분포를 살펴 보겠습니다.
+
+```{r}
+daily <- daily %>% 
+  mutate(wday = wday(date, label = TRUE))
+ggplot(daily, aes(wday, n)) + 
+  geom_boxplot()
+```
+
+- 대부분의 여행은 비즈니스를 위한 것이므로 주말 항공편 수가 적습니다. 그 효과는 토요일에 특히 두드러지게 나타납니다. 
+
+- 월요일 아침 모임을 위해 일요일에 떠나는 경우도 있지만, 토요일에 가족과 함께 집에있는 것처럼 떠나는 것은 매우 드뭅니다.
+
+- 이 강력한 패턴을 제거하는 한 가지 방법은 모델을 사용하는 것입니다. 먼저 모델을 맞추고 원본 데이터에 예측치를 겹쳐서 표시합니다.
+
+```{r}
+mod <- lm(n ~ wday, data = daily)
+
+grid <- daily %>% 
+  data_grid(wday) %>% 
+  add_predictions(mod, "n")
+
+ggplot(daily, aes(wday, n)) + 
+  geom_boxplot() +
+  geom_point(data = grid, colour = "red", size = 4)
+```
+
+```{r}
+daily <- daily %>% 
+  add_residuals(mod)
+daily %>% 
+  ggplot(aes(date, resid)) + 
+  geom_ref_line(h = 0) + 
+  geom_line()
+```
+
+- y 축의 변화에 주목하십시오. 이제 요일에 예상되는 비행 횟수와의 편차가 표시됩니다. 
+
+- 이 플롯은 많은 요일 효과를 제거 했으므로 남아있는 더 섬세한 패턴을 볼 수 있기 때문에 유용합니다.
+
+- 우리 모델은 6월부터 실패 할 것으로 보입니다. 우리 모델이 포착하지 않은 강력한 규칙적인 패턴을 여전히 볼 수 있습니다. 매주 한 줄씩 줄을 그리면 그 원인을 쉽게 알 수 있습니다.
+
+```{r}
+ggplot(daily, aes(date, resid, colour = wday)) + 
+  geom_ref_line(h = 0) + 
+  geom_line()
+```
+
+- 우리 모델은 토요일에 비행 횟수를 정확히 예측하지 못합니다.
+
+- 여름에는 예상보다 많은 항공편이 있고, 가을에는 더 적은 항공편이 있습니다. 다음 섹션에서이 패턴을 캡처하는 방법을 더 잘 이해할 수 있습니다.
+
+- 예상보다 훨씬 적은 항공편으로 수 일이 있습니다.
+
+```{r}
+daily %>% 
+  filter(resid < -100)
+```
+
+- 미국의 공휴일에 익숙하다면 7 월 4 일, 추수 감사절과 크리스마스를 볼 수 있습니다. 
+
+- 공휴일과 일치하지 않는 것 몇 가지가 있습니다. 연습 문제 중 하나에서 작업 할 것입니다.
+
+- 1 년 동안 장기간에 걸쳐보다 매끄러운 추세가 나타납니다. geom_smooth ()를 사용하여 이러한 추세를 강조 할 수 있습니다.
+
+```{r}
+daily %>% 
+  ggplot(aes(date, resid)) + 
+  geom_ref_line(h = 0) + 
+  geom_line(colour = "grey50") + 
+  geom_smooth(se = FALSE, span = 0.20)
+
+```
+
+- 1 월 (12 월 에는 항공편이 더 적고 여름 (5 월 -9 월)에는 더 많은 항공편이 있습니다. 
+
+- 우리는 단지 1 년의 데이터 만 가지고 있기 때문에이 패턴을 정량적으로 많이 할 수 없습니다. 그러나 우리는 도메인 지식을 사용하여 잠재적 설명을 브레인 스토밍 할 수 있습니다.
+
+### 24.3.2 Seasonal Saturday effect
+
+- 먼저 토요일에 비행 횟수를 정확하게 예측하지 못하게 하십시오. 시작하기 좋은 곳은 토요일에 초점을 맞추어 원시 번호로 돌아가는 것입니다.
+
+```{r}
+daily %>% 
+  filter(wday == "Sat") %>% 
+  ggplot(aes(date, n)) + 
+    geom_point() + 
+    geom_line() +
+    scale_x_date(NULL, date_breaks = "1 month", date_labels = "%b")
+```
+
+- (데이터와 보간이 무엇인지 명확하게 하기 위해 점과 선을 모두 사용했습니다.)
+
+- 나는 이 패턴이 여름 휴가로 인해 일어난다고 생각합니다 : 많은 사람들이 여름에 휴가를 가지며 사람들은 휴가를 위해 토요일 여행을 꺼려하지 않습니다. 
+
+- 이 음모를 보면 여름 휴가가 6 월 초에서 8 월 말까지라고 추측 할 수 있습니다. 2013 년 여름 방학은 6 월 26-9 월 9 일이었습니다.
+
+- 봄에 가을보다 가을에 토요일 비행이 더 많은 이유는 무엇입니까? 나는 미국인 친구들에게 물었고 추수 감사절과 크리스마스 휴가 때문에 가을 동안 가족 휴가를 계획하는 것이 덜 일반적이라고 제안했다. 우리는 확실히 알 수있는 데이터가 없지만 그럴듯한 작업 가설처럼 보입니다.
+
+- 대략 세 가지 용어를 포착하는 "term" 변수를 만들고, 우리의 작업을 음모로 확인하십시오.
+
+```{r}
+term <- function(date) {
+  cut(date, 
+    breaks = ymd(20130101, 20130605, 20130825, 20140101),
+    labels = c("spring", "summer", "fall") 
+  )
+}
+
+daily <- daily %>% 
+  mutate(term = term(date)) 
+
+daily %>% 
+  filter(wday == "Sat") %>% 
+  ggplot(aes(date, n, colour = term)) +
+  geom_point(alpha = 1/3) + 
+  geom_line() +
+  scale_x_date(NULL, date_breaks = "1 month", date_labels = "%b")
+```
+
+- (나는 플롯에서 좋은 휴식을 취하기 위해 수동으로 날짜를 조정했다. 시각화를 사용하여 함수가하는 일을 이해하는 데 도움이되는 것은 정말 강력하고 일반적인 기술이다.)
+
+- 이 새로운 변수가 다른 요일에 어떤 영향을 주는지 확인하는 것이 유용합니다.
+
+```{r}
+daily %>% 
+  ggplot(aes(wday, n, colour = term)) +
+    geom_boxplot()
+```
+
+- 용어 전반에 걸쳐 큰 변동이 있는 것처럼 보이므로 각 용어에 대해 요일별 효과를 적용하는 것이 합리적입니다. 
+
+- 이것은 우리의 모델을 향상 시키지만, 우리가 바라는 것만 큼은 아닙니다.
+
+```{r}
+daily <- daily %>% 
+  mutate(term = term(date)) 
+
+mod1 <- lm(n ~ wday, data = daily)
+mod2 <- lm(n ~ wday * term, data = daily)
+
+daily %>% 
+  gather_residuals(without_term = mod1, with_term = mod2) %>% 
+  ggplot(aes(date, resid, colour = model)) +
+    geom_line(alpha = 0.75)
+```
+
+- 모델의 예측을 원시 데이터에 겹쳐서 문제를 볼 수 있습니다.
+
+```{r}
+grid <- daily %>% 
+  data_grid(wday, term) %>% 
+  add_predictions(mod2, "n")
+
+ggplot(daily, aes(wday, n)) +
+  geom_boxplot() + 
+  geom_point(data = grid, colour = "red") + 
+  facet_wrap(~ term)
+```
+
+- 우리의 모델은 평균 효과를 찾는 것이지만 우리는 큰 이상 치를 많이 가지고 있으므로 평균은 전형적인 값에서 멀리 떨어지는 경향이 있습니다. 
+
+- rlm ()을 사용하면 이 문제를 해결할 수 있습니다. 이것은 outliers의 추정치에 대한 영향을 크게 줄이고 요일 패턴을 제거하는 훌륭한 작업을 수행하는 모델을 제공합니다.
+
+```{r}
+mod3 <- MASS::rlm(n ~ wday * term, data = daily)
+
+daily %>% 
+  add_residuals(mod3, "resid") %>% 
+  ggplot(aes(date, resid)) + 
+  geom_hline(yintercept = 0, size = 2, colour = "white") + 
+  geom_line()
+```
+
+- 장기적인 추세와 긍정적인 것과 부정적인 이상치를 보는 것이 훨씬 쉬워졌습니다.
+
+### 24.3.3 Computed variables
+
+- 많은 모델과 많은 시각화를 실험하고 있다면 변수 생성을 
+
+- 하나의 함수로 묶어 서로 다른 변환을 우연히 적용 할 기회가없는 것이 좋습니다. 예를 들어 다음과 같이 쓸 수 있습니다.
+
+```{r}
+compute_vars <- function(data) {
+  data %>% 
+    mutate(
+      term = term(date), 
+      wday = wday(date, label = TRUE)
+    )
+}
+```
+
+- 또 다른 옵션은 변환을 모델 수식에 직접 넣는 것입니다.
+
+```{r}
+wday2 <- function(x) wday(x, label = TRUE)
+mod3 <- lm(n ~ wday2(date) * term(date), data = daily)
+```
+
+- 두 방법 모두 합리적인 방법입니다. 변형 된 변수를 명시 적으로 만드는 것은 작업을 확인하거나 시각화에 사용하려는 경우 유용합니다. 
+
+- 그러나 여러 열을 반환하는 변형 (예 : 스플라인)을 쉽게 사용할 수 없습니다. 
+
+- 모델 함수에 변형을 포함 시키면 모델이 자체 포함되어 있기 때문에 많은 다른 데이터 세트로 작업 할 때 좀 더 편하게 사용할 수 있습니다.
+
+
+### 24.3.4 Time of year: an alternative approach
+
+- 이전 섹션에서는 모델 개선을 위해 도메인 지식 (미국 학교 용어가 여행에 미치는 영향)을 사용했습니다.
+
+- 모델에서 명시 적으로 지식을 사용하는 대신 데이터에 더 많은 대화 공간을 제공 할 수 있습니다. 
+
+- 더 유연한 모델을 사용하여 관심있는 패턴을 캡처 할 수 있습니다. 간단한 선형 추세가 적합하지 않으므로 자연스러운 스플라인을 사용하여 일년 내내 매끄러운 곡선을 만들 수 있습니다.
+
+```{r}
+library(splines)
+mod <- MASS::rlm(n ~ wday * ns(date, 5), data = daily)
+
+daily %>% 
+  data_grid(wday, date = seq_range(date, n = 13)) %>% 
+  add_predictions(mod) %>% 
+  ggplot(aes(date, pred, colour = wday)) + 
+    geom_line() +
+    geom_point()
+```
+
+- 우리는 토요일 비행 횟수에 강한 패턴을 보았습니다. 우리는 원시 데이터에서 그 패턴을 보았기 때문에 안심할 수 있습니다. 다른 접근법에서 같은 신호를 얻으면 좋은 신호입니다.
+
+### 24.3.5 Exercises (생략)
+
+### 24.4 Learning more about models
+
+- 우리는 모델링의 절대적인 면만 썼지만, 사용자가 자신의 데이터 분석을 향상시키는 데 사용할 수있는 단순하지만 일반적인 목적의 도구를 얻었기를 바랍니다. 간단하게 시작하는 것이 좋습니다! 
+
+- 이전에 보았 듯이 매우 단순한 모델조차도 변수간의 상호 작용을 알아내는 능력에 큰 차이를 만들 수 있습니다.
+
+- 이 모델링 챕터는 나머지 책보다 훨씬 더 독창적입니다. 
+
+- 나는 다소 다른 관점에서 대부분의 다른 관점으로 모델링에 접근하며, 그것에 대해 상대적으로 공간이 거의 없다. 모델링은 실제로 독자적으로 책을받을 자격이 있으므로,이 세 권의 책 중 적어도 하나를 읽는 것이 좋습니다.
+
+1. Statistical Modeling: A Fresh Approach by Danny Kaplan, http://www.mosaic-web.org/go/StatisticalModeling/.
+
+2. An Introduction to Statistical Learning by Gareth James, Daniela Witten, Trevor Hastie, and Robert Tibshirani, http://www-bcf.usc.edu/~gareth/ISL/ 
+
+3. Applied Predictive Modeling by Max Kuhn and Kjell Johnson, http://appliedpredictivemodeling.com
+
+## 25. Many models
+
+### 25.1 Introduction
+
+- 이 장에서는 많은 수의 모델을 쉽게 사용할 수 있도록 도와주는 세 가지 강력한 아이디어를 학습합니다.
+
+- 많은 간단한 모델을 사용하여 복잡한 데이터 세트를 더 잘 이해합니다.
+
+- list-columns를 사용하여 임의의 데이터 구조를 데이터 프레임에 저장합니다. 예를 들어 선형 모델을 포함하는 열을 가질 수 있습니다.
+
+- David Robinson의 broom 패키지를 사용하여 모델을 깔끔한 데이터로 변환합니다. 많은 양의 모델로 작업하기위한 강력한 기술입니다. 일단 깔끔한 데이터가 있으면 이전에 배운 모든 기술을 적용 할 수 있기 때문입니다.
+
+- 우리는 전세계의 평균 수명에 관한 데이터를 사용하여 동기 부여의 예제로 뛰어들 것으로 시작합니다. 
+
+- 작은 데이터 세트이지만 시각화를 향상시키는 데 모델링이 얼마나 중요한지 보여줍니다. 
+
+- 우리는 많은 수의 간단한 모델을 사용하여 가장 강력한 신호를 분할하여 남아있는 더 약한 신호를 볼 수 있습니다. 
+
+- 모델 요약을 통해 우리가 특이 치와 비정상적인 경향을 파악하는 데 도움을 줄 수있는 방법도 살펴 봅니다.
+
+- 다음 섹션에서는 개별 기술에 대해 자세히 설명합니다.
+
+- 목록 열 데이터 구조 및 데이터 프레임에 목록을 넣는 것이 타당한 이유에 대해 자세히 배웁니다.
+
+- 목록 열 작성에서 목록 열을 작성하는 세 가지 주요 방법을 학습합니다.
+
+- 목록 열을 단순화 할 때 목록 열을 일반 원자 벡터 (또는 원자 벡터 집합)로 다시 변환하여보다 쉽게 작업 할 수 있도록하는 방법을 배웁니다.
+
+- broom로 깔끔한 데이터를 만들 때, broom이제공하는 모든 도구 세트에 대해 배우고 다른 유형의 데이터 구조에 어떻게 적용 할 수 있는지 살펴 봅니다.
+
+- 이 장은 다소 포부가 있습니다.이 책이 R에 대한 첫 번째 소개 인 경우 이 장은 어려울 것입니다. 모델링, 데이터 구조 및 반복에 대한 아이디어를 깊이 내면화해야합니다. 
+
+- 당신이 그것을 얻지 못한다면 걱정하지 마십시오. 단지 몇 달 동안이 장을 제쳐두고 머리를 펴고 싶을 때 다시 오십시오.
+
+### 25.1.1 Prerequisites
+
+- 많은 모델로 작업하는 것은 모델링을 용이하게하기 위해 tidyverse (데이터 탐색, 논쟁 및 프로그래밍) 및 modelr 패키지의 많은 패키지를 필요로합니다.
+
+```{r}
+library(modelr)
+library(tidyverse)
+```
+
+### 25.2 gapminder
+
+- 많은 간단한 모델의 힘을 유도하기 위해 "gapminder"데이터를 살펴볼 것입니다. 
+
+- 이 데이터는 스웨덴의 의사이자 통계 학자 인 Hans Rosling에 의해 대중화되었습니다. 너는 그 사람에 대해 들어 본 적이 없다면, 지금 당장이 장을 읽지 말고 그의 비디오를 보아라. 
+
+- 그는 환상적인 데이터 발표자이며 데이터를 사용하여 매력적인 이야기를 표현하는 방법을 보여줍니다. 시작하기 좋은 곳은 BBC와 공동으로 촬영 한 짧은 동영상입니다. https://www.youtube.com/watch?v=jbkSRLYSojo.
+
+- gapminder 데이터는 기대 수명과 GDP와 같은 통계를보고 시간 경과에 따른 국가의 진행을 요약합니다. gapminder 패키지를 만든 Jenny Bryan 덕분에 데이터는 R에서 쉽게 액세스 할 수 있습니다.
+
+```{r}
+library(gapminder)
+gapminder
+```
+
+- 이 사례 연구에서 우리는 "각 국가 (국가)에 대한 기대 수명 (lifeExp)이 시간에 따라 어떻게 변하는가?"라는 질문에 답하기 위해 세 가지 변수에만 초점을 맞출 것입니다. 시작하기 좋은 곳은 줄거리입니다.
+
+```{r}
+gapminder %>% 
+  ggplot(aes(year, lifeExp, group = country)) +
+    geom_line(alpha = 1/3)
+```
+
+- 이것은 작은 데이터 세트입니다. 단지 1,700 개의 관측치와 3 개의 변수 만 있습니다. 
+
+- 그러나 계속 진행되는 것을 보기가 여전히 어렵습니다! 전반적으로 기대 수명이 꾸준히 개선되고있는 것처럼 보입니다. 
+- 그러나 자세히 살펴보면 이 패턴을 따르지 않는 국가가 있음을 알 수 있습니다. 우리는 어떻게 이들 국가를보다 쉽게 볼 수 있습니까?
+
+- 한 가지 방법은 지난 장에서와 동일한 접근법을 사용하는 것입니다. 
+
+- 더 세밀한 추세를 보지 못하게하는 강력한 신호 (전반적인 선형 성장)가 있습니다. 우리는 선형 추세를 가진 모델을 피팅함으로써 이러한 요소들을 구분할 것입니다. 이 모델은 시간이 지남에 따라 꾸준히 성장하고 나머지는 남아있는 것을 보여줍니다.
+
+- 당신은 이미 우리가 하나의 국가를 가졌다면 그것을하는 법을 알고 있습니다
+
+```{r}
+nz <- filter(gapminder, country == "New Zealand")
+nz %>% 
+  ggplot(aes(year, lifeExp)) + 
+  geom_line() + 
+  ggtitle("Full data = ")
+
+nz_mod <- lm(lifeExp ~ year, data = nz)
+nz %>% 
+  add_predictions(nz_mod) %>%
+  ggplot(aes(year, pred)) + 
+  geom_line() + 
+  ggtitle("Linear trend + ")
+
+nz %>% 
+  add_residuals(nz_mod) %>% 
+  ggplot(aes(year, resid)) + 
+  geom_hline(yintercept = 0, colour = "white", size = 3) + 
+  geom_line() + 
+  ggtitle("Remaining pattern")
+```
+
+### 25.2.1 Nested data
+
+- 이 코드를 여러 번 복사하여 붙여 넣는 것을 상상해보십시오. 그러나 당신은 이미 더 나은 방법을 배웠습니다! 
+
+- 함수로 공통 코드를 추출하고 purrr의 map 함수를 사용하여 반복합니다. 이 문제는 이전에 본 것과 약간 다르게 구성됩니다. 
+
+- 각 변수에 대해 액션을 반복하는 대신, 행의 하위 집합 인 각 국가에 대해 액션을 반복합니다. 그렇게하기 위해서는 새로운 데이터 구조 인 중첩 된 데이터 프레임이 필요합니다. 
+
+- 중첩 된 데이터 프레임을 만들려면 그룹화 된 데이터 프레임으로 시작하여 "중첩"합니다.
+
+```{r}
+by_country <- gapminder %>% 
+  group_by(country, continent) %>% 
+  nest()
+
+by_country
+```
+
+- (나는 대륙과 국가를 구분하여 조금씩 부정하고있다. 주어진 국가, 대륙은 고정되어 있으므로 더 이상 그룹을 추가하지 않지만 추가 변수를 타고 쉽게 탈 수있다.)
+
+- 이렇게하면 그룹당 하나의 행 (국가 별)과 약간 특이한 열 (데이터)이있는 데이터 프레임이 만들어집니다. 
+
+- 데이터는 데이터 프레임 (또는 정확한 것)의 목록입니다. 이것은 미친 아이디어처럼 보입니다. 
+
+- 우리는 다른 데이터 프레임의 목록 인 열이있는 데이터 프레임을 가지고 있습니다! 
+
+- 나는 이것이 왜 좋은 생각이라고 생각하는지 곧 설명 할 것이다.
+
+- 데이터 열은 다소 복잡하기 때문에 보기가 까다 롭습니다. 우리는 여전히 이러한 개체를 탐색하는 데 유용한 도구를 사용하고 있습니다. 
+
+- 불행히도 str ()을 사용하는 것은 권장하지 않습니다. 왜냐하면 종종 매우 긴 출력을 생성하기 때문입니다. 
+
+- 그러나 데이터 열에서 단일 요소를 뽑으면 해당 국가 (이 경우 아프가니스탄)의 모든 데이터가 포함되어 있음을 알 수 있습니다.
+
+```{r}
+by_country$data[[1]]
+```
+
+- 표준 그룹화 된 데이터 프레임과 중첩 된 데이터 프레임의 차이점에 유의하십시오. 
+
+- 그룹화 된 데이터 프레임에서 각 행은 관찰입니다. 중첩 된 데이터 프레임에서 각 행은 그룹입니다. 
+
+- 중첩 된 데이터 세트에 대해 생각해 볼 수있는 또 다른 방법은 이제 메타 뷰를 얻는 것입니다. 
+
+- 하나의 시점이 아닌 국가의 전체 시간 코스를 나타내는 행입니다.
+
+### 25.2.2 List-columns
+
+- 이제 중첩 된 데이터 프레임이 생겨서 일부 모델을 적합하게 만들 수 있습니다. 모델 적합 함수가 있습니다.
+
+- 그리고 모든 데이터 프레임에 적용하려고합니다. 데이터 프레임은 목록에 있으므로 purrr :: map ()을 사용하여 각 요소에 country_model을 적용 할 수 있습니다.
+
+```{r}
+country_model <- function(df) {
+  lm(lifeExp ~ year, data = df)
+}
+
+models <- map(by_country$data, country_model)
+```
+
+- 그러나 모델 목록을 자유롭게 떠 다니는 개체로 남겨두기보다는 by_country 데이터 프레임에 열로 저장하는 것이 더 좋습니다. 
+
+- 관련 객체를 열에 저장하는 것은 데이터 프레임의 핵심 부분이며 왜 목록 열이 그렇게 좋은 생각인지 생각합니다. 
+
+- 이 국가들과 일하는 과정에서 우리는 국가마다 요소가 하나씩있는 많은 목록을 갖게 될 것입니다. 
+
+- 그렇다면 이 모든 것을 하나의 데이터 프레임에 모두 저장하지 않는 이유는 무엇입니까?
+
+- 다시 말해 전역 환경에서 새 객체를 만드는 대신 by_country 데이터 프레임에 새 변수를 만들 것입니다. dplyr :: mutate ()에 대한 작업입니다.
+
+```{r}
+
+by_country <- by_country %>% 
+  mutate(model = map(data, country_model))
+by_country
+```
+
+- 이는 모든 장점이 있습니다. 왜냐하면 모든 관련 오브젝트가 함께 저장되기 때문에 필터링하거나 정렬 할 때 수동으로 동기화 할 필요가 없습니다. 
+
+- 데이터 프레임의 의미는 다음과 같이 처리합니다.
+
+```{r}
+by_country %>% 
+  filter(continent == "Europe")
+
+by_country %>% 
+  arrange(continent, country)
+```
+
+- 데이터 프레임 목록과 모델 목록이 별개의 객체 인 경우 하나의 벡터를 재정렬하거나 하위 집합 할 때마다 모든 벡터 객체를 재정렬하거나 하위 집합을 동기화하여 동기화 상태로 유지해야한다는 점을 기억해야합니다. 
+
+- 잊어 버리면 코드는 계속 작동하지만 잘못된 대답을 줄 것입니다.
+
+### 25.2.3 Unnesting
+
+- 이전에는 단일 데이터 세트로 단일 모델의 잔차를 계산했습니다.
+
+- 이제 142 개의 데이터 프레임과 142 개의 모델이 있습니다. 잔차를 계산하려면 add_residuals ()를 각 모델 - 데이터 쌍과 함께 호출해야합니다.
+
+```{r}
+by_country <- by_country %>% 
+  mutate(
+    resids = map2(data, model, add_residuals)
+  )
+by_country
+```
+
+- 그러나 데이터 프레임 목록을 어떻게 그릴 수 있습니까? 
+
+- 그 질문에 답하기 위해 고군분투하는 대신, 데이터 프레임 목록을 일반 데이터 프레임으로 돌려 보겠습니다. 
+
+- 이전에는 일반 데이터 프레임을 중첩 데이터 프레임으로 바꾸기 위해 nest ()를 사용했으며 이제는 unnest ()와 반대의 작업을 수행합니다.
+
+```{r}
+resids <- unnest(by_country, resids)
+resids
+```
+
+- 각 일반 열은 중첩 열의 각 행마다 하나씩 반복됩니다.
+
+- 이제 우리는 정규 데이터 프레임을 가지고 있습니다. 잔차를 그릴 수 있습니다.
+
+```{r}
+resids %>% 
+  ggplot(aes(year, resid)) +
+    geom_line(aes(group = country), alpha = 1 / 3) + 
+    geom_smooth(se = FALSE)
+#> `geom_smooth()` using method = 'gam'
+```
+
+- 대륙 별 facetting은 특히 드러납니다 :
+
+```{r}
+resids %>% 
+  ggplot(aes(year, resid, group = country)) +
+    geom_line(alpha = 1 / 3) + 
+    facet_wrap(~continent)
+```
+
+- 가벼운 패턴을 놓친 것처럼 보입니다. 아프리카에서도 계속 진행중인 흥미로운 점이 있습니다. 매우 큰 잔차가 있음을 알 수 있습니다. 
+
+- 이는 우리 모델이 거기에서 잘 맞지 않는다는 것을 의미합니다. 우리는 다음 섹션에서 좀 더 다른 각도에서 공격 해 보겠습니다.
+
+### 25.2.4 Model quality
+
+- 모델에서 잔차를 보는 대신 모델 품질에 대한 일반적인 측정을 볼 수 있습니다. 
+
+- 이전 장에서 몇 가지 구체적인 측정 방법을 배웠습니다. 여기에서는 broom 패키지를 사용하는 다른 접근 방법을 보여줍니다. 
+
+- broom 꾸러미는 모델을 깔끔한 데이터로 바꾸기위한 일반적인 기능 세트를 제공합니다. 
+
+- 여기서는 broom :: glance ()를 사용하여 일부 모델 품질 메트릭을 추출합니다. 
+
+- 모델에 적용하면 단일 행이있는 데이터 프레임이 생성됩니다.
+
+```{r}
+broom::glance(nz_mod)
+```
+
+```{r}
+by_country %>% 
+  mutate(glance = map(model, broom::glance)) %>% 
+  unnest(glance)
+```
+
+- 여전히 모든 목록 열을 포함하기 때문에 우리가 원하는 결과물이 아닙니다. unnest ()가 단일 행 데이터 프레임에서 작동 할 때의 기본 동작입니다. 이 열을 억제하려면 .drop = TRUE를 사용합니다.
+
+```{r}
+glance <- by_country %>% 
+  mutate(glance = map(model, broom::glance)) %>% 
+  unnest(glance, .drop = TRUE)
+glance
+```
+
+- (인쇄되지 않은 변수에주의를 기울이십시오. 유용한 정보가 많이 있습니다.)
+
+- 이 데이터 프레임을 사용하면 잘 맞지 않는 모델을 찾을 수 있습니다.
+
+```{r}
+glance %>% 
+  arrange(r.squared)
+```
+
+- 최악의 모델은 모두 아프리카에있는 것처럼 보입니다. 
+
+- 그걸 플롯으로 두 번 확인해 봅시다. 여기에는 상대적으로 적은 수의 관측 값과 이산 변수가 있으므로 geom_jitter ()가 효과적입니다.
+
+```{r}
+glance %>% 
+  ggplot(aes(continent, r.squared)) + 
+    geom_jitter(width = 0.5)
+```
+
+- We could pull out the countries with particularly bad R2 and plot the data:
+
+```{r}
+bad_fit <- filter(glance, r.squared < 0.25)
+
+gapminder %>% 
+  semi_join(bad_fit, by = "country") %>% 
+  ggplot(aes(year, lifeExp, colour = country)) +
+    geom_line()
+```
+
+- 우리는 HIV / AIDS 전염병과 르완다 대량 학살의 비극이라는 두 가지 주요 효과를 여기에서 보았습니다.
+
+### 25.2.5 Exercises (생략)
+
+### 25.3 List-columns
+
+- 이제는 여러 모델을 관리하기 위한 기본 워크 플로를 보았으므로 몇 가지 세부 사항으로 돌아가 보겠습니다. 
+
+- 이 섹션에서는 목록 열 데이터 구조에 대해 좀 더 자세히 살펴 보겠습니다. 
+
+- 최근에 나는 목록 열에 대한 아이디어를 정말로 높이 평가했습니다. 목록 - 열은 데이터 프레임의 정의에 내포되어 있습니다. 
+
+- 데이터 프레임은 동일한 길이 벡터의 명명 된 목록입니다. 
+
+- 목록은 벡터이므로 목록을 
+데이터 프레임의 열로 사용하는 것이 항상 올바른 방법입니다. 
+
+- 그러나 기본 R은 목록 열을 쉽게 만들 수 없으며 data.frame ()은 목록을 열 목록으로 처리합니다.
+```{r}
+data.frame(x = list(1:3, 3:5))
+```
+
+```{r}
+data.frame(
+  x = I(list(1:3, 3:5)), 
+  y = c("1, 2", "3, 4, 5")
+)
+```
+
+- Tibble은 lazier (tibble ()이 입력을 수정하지 않음) 및 더 나은 인쇄 방법을 제공하여이 문제를 완화합니다.
+
+```{r}
+tibble(
+  x = list(1:3, 3:5), 
+  y = c("1, 2", "3, 4, 5")
+)
+```
+
+```{r}
+tribble(
+   ~x, ~y,
+  1:3, "1, 2",
+  3:5, "3, 4, 5"
+)
+```
+
+- 목록 - 열은 종종 중간 데이터 구조로 가장 유용합니다. 
+
+- 대부분의 R 함수는 원자 벡터 또는 데이터 프레임에서 작동하기 때문에 직접 작업하기가 어렵지만 관련 항목을 데이터 프레임에 유지하는 이점은 약간의 번거 로움이 따릅니다.
+
+- 일반적으로 효과적인 목록 - 열 파이프 라인의 세 부분이 있습니다.
+
+- list-columns 만들기에 설명 된 것처럼 nest (), summarize () + list () 또는 mutate () + map 함수 중 하나를 사용하여 list-column을 만듭니다.
+
+- map (), map2 () 또는 pmap ()을 사용하여 기존 목록 열을 변형하여 다른 중간 목록 열을 작성합니다. 
+
+- 예를 들어, 위의 사례 연구에서 데이터 프레임의 목록 - 열을 변형하여 모델의 목록 - 열을 만들었습니다.
+
+- 목록 열 단순화에서 설명한대로 목록 열을 데이터 프레임 또는 원자 벡터로 다시 단순화합니다.
+
+### 25.4 Creating list-columns
+
+- 일반적으로 tibble ()을 사용하여 목록 열을 만들지 않습니다. 
+
+- 대신 다음 세 가지 방법 중 하나를 사용하여 일반 열에서 생성합니다.
+
+- tidyr :: nest ()를 사용하여 그룹화 된 데이터 프레임을 데이터 프레임 목록 - 열이있는 중첩 데이터 프레임으로 변환합니다.
+
+- mutate () 및 벡터화 된 함수를 사용하여 목록을 반환합니다.
+
+- 여러 결과를 반환하는 summarize () 및 요약 함수.
+
+- 또는 tibble :: enframe ()을 사용하여 명명 된 목록에서 생성 할 수도 있습니다.
+
+- 일반적으로 목록 열을 만들 때 동질성인지 확인해야합니다. 각 요소에는 동일한 유형의 것이 포함되어야합니다. 
+
+- 이것이 사실인지 확인하는 검사는 없지만, purrr을 사용하고 타입 안정 함수에 대해 배운 것을 기억한다면, 자연스럽게 발견되어야합니다.
+
+### 25.4.1 With nesting
+
+- nest ()는 데이터 프레임의 목록 열이있는 데이터 프레임 인 중첩 데이터 프레임을 만듭니다.
+
+- 중첩 된 데이터 프레임에서 각 행은 메타 관측입니다. 다른 열은 관측을 정의하는 변수 (위의 국가 및 대륙과 같은)를 제공하고 데이터 프레임의 목록 열은 메타 관측을 구성하는 개별 관측을 제공합니다.
+
+- nest ()를 사용하는 두 가지 방법이 있습니다. 
+
+- 지금까지 그룹화 된 데이터 프레임과 함께 사용하는 방법을 살펴 보았습니다. 그룹화 된 데이터 프레임에 적용되면 nest ()는 그룹화 열을 그대로 유지하고 그 외 모든 항목을 list-column에 묶습니다.
+
+```{r}
+gapminder %>% 
+  group_by(country, continent) %>% 
+  nest()
+```
+
+- 또한 그룹화되지 않은 데이터 프레임에이 열을 사용하여 중첩 할 열을 지정할 수 있습니다.
+
+```{r}
+gapminder %>% 
+  nest(year:gdpPercap)
+```
+
+### 25.4.2 From vectorised functions
+
+- 유용한 함수 중 일부는 원자 벡터를 사용하여 목록을 반환합니다. 
+
+- 예를 들어, 문자열에서 문자 벡터를 취하고 문자 벡터 목록을 반환하는 stringr :: str_split ()에 대해 배웠습니다.
+
+- mutate 내부에서 이를 사용하면 list-column을 얻을 수 있습니다.
+
+```{r}
+df <- tribble(
+  ~x1,
+  "a,b,c", 
+  "d,e,f,g"
+) 
+
+df %>% 
+  mutate(x2 = stringr::str_split(x1, ","))
+
+```
+
+```{r}
+df %>% 
+  mutate(x2 = stringr::str_split(x1, ",")) %>% 
+  unnest()
+```
+
+- (이 패턴을 많이 사용하는 경우,이 공통 패턴을 감싸는 래퍼 인 tidyr : separate_rows ()를 확인하십시오.
+
+- 이 패턴의 다른 예는 purrr에서 map (), map2 (), pmap ()을 사용하는 것입니다. 예를 들어, 다른 함수를 호출하여 마지막 예제를 가져 와서 mutate ()를 사용하도록 다시 작성할 수 있습니다.
+
+```{r}
+sim <- tribble(
+  ~f,      ~params,
+  "runif", list(min = -1, max = -1),
+  "rnorm", list(sd = 5),
+  "rpois", list(lambda = 10)
+)
+
+sim %>%
+  mutate(sims = invoke_map(f, params, n = 10))
+
+```
+
+- 기술적으로 sim은 두 배와 정수 벡터를 모두 포함하고 있기 때문에 균질하지 않습니다. 
+
+- 그러나 정수 및 복식은 모두 숫자 벡터이므로 많은 문제가 발생하지는 않습니다.
+
+### 25.4.3 From multivalued summaries
+
+- summarize ()의 한 가지 제한 사항은 단일 값을 리턴하는 요약 함수에서만 작동한다는 것입니다. 
+
+- 즉, 임의의 길이의 벡터를 리턴하는 quantile ()과 같은 함수와 함께 사용할 수 없다는 것을 의미합니다.
+
+```{r}
+mtcars %>% 
+  group_by(cyl) %>% 
+  summarise(q = quantile(mpg))
+```
+
+- 그러나 목록에 결과를 래핑 할 수는 있습니다. 이것은 각 요약이 이제 길이 1의 목록 (벡터)이므로 summarize ()의 계약을 따릅니다.
+
+```{r}
+mtcars %>% 
+  group_by(cyl) %>% 
+  summarise(q = list(quantile(mpg)))
+
+```
+
+- 불충분 한 결과를 얻으려면 다음과 같은 가능성을 포착해야합니다.
+
+```{r}
+probs <- c(0.01, 0.25, 0.5, 0.75, 0.99)
+mtcars %>% 
+  group_by(cyl) %>% 
+  summarise(p = list(probs), q = list(quantile(mpg, probs))) %>% 
+  unnest()
+```
+
+### 25.4.4 From a named list
+
+- 목록 열이있는 데이터 프레임은 일반적인 문제에 대한 해결책을 제공합니다. 
+
+- 목록의 내용과 해당 요소를 반복 할 경우 어떻게합니까? 모든 것을 하나의 객체로 묶는 대신 데이터 프레임을 만드는 것이 더 쉽습니다. 
+
+- 한 열에는 요소가 포함될 수 있고 한 열에는 목록이 포함될 수 있습니다. 
+
+- 목록에서 그러한 데이터 프레임을 생성하는 쉬운 방법은 tibble :: enframe ()입니다.
+
+```{r}
+x <- list(
+  a = 1:5,
+  b = 3:4, 
+  c = 5:6
+) 
+
+df <- enframe(x)
+df
+```
+
+- 이 구조의 장점은 간단합니다. 이름은 메타 데이터의 문자 벡터가 있으면 유용하지만 다른 유형의 데이터가 있거나 여러 벡터가 있으면 도움이 되지 않습니다.
+
+- 이제 이름과 값을 병렬로 반복하려는 경우 map2()를 사용할 수 있습니다.
+
+```{r}
+df %>% 
+  mutate(
+    smry = map2_chr(name, value, ~ stringr::str_c(.x, ": ", .y[1]))
+  )
+```
+
+### 25.4.5 Exercises (생략)
+
+### 25.5 Simplifying list-columns
+
+- 이 책에서 배웠던 데이터 조작 및 시각화 기술을 적용하려면 list-column을 일반 열 (원자 벡터) 또는 열 집합으로 다시 단순화해야합니다. 
+
+- 더 간단한 구조로 다시 축소하기 위해 사용하는 기술은 요소 당 하나의 값 또는 여러 값 중 원하는 값에 따라 다릅니다.
+
+- 단일 값을 원할 경우 map_lgl (), map_int (), map_dbl () 및 map_chr ()에 mutate ()를 사용하여 원자 벡터를 만듭니다.
+
+- 많은 값을 원하면 unnest ()를 사용하여 목록 열을 일반 열로 다시 변환하고 필요한만큼 행을 반복하십시오.
+
+### 25.5.1 List to vector
+
+- 목록 열을 원자 벡터로 줄일 수 있으면 일반 열이됩니다. 예를 들어, 타입과 길이를 가진 객체를 항상 요약 할 수 있으므로,이 코드는 여러분이 가지고있는 list-column의 종류에 관계없이 작동합니다 :
+
+```{r}
+df <- tribble(
+  ~x,
+  letters[1:5],
+  1:3,
+  runif(5)
+)
+  
+df %>% mutate(
+  type = map_chr(x, typeof),
+  length = map_int(x, length)
+)
+```
+
+- 이것은 기본 tbl 인쇄 방법에서 얻은 기본 정보와 동일하지만 필터링을 위해 사용할 수 있습니다.
+
+- 이기종 목록을 가지고 있고 그 부분을 걸러 내고 싶다면 유용한 기법입니다.
+
+- 지도 _ * () 단축키를 잊지 마세요. map_chr (x, "apple")을 사용하여 x의 각 요소에 대해 apple에 저장된 문자열을 추출 할 수 있습니다. 
+
+- 중첩 된 목록을 일반 열로 끌어 올 때 유용합니다. null를 반환하는 대신 요소가 누락 된 경우 사용할 값을 제공하려면 .null 인수를 사용하십시오.
+
+```{r}
+df <- tribble(
+  ~x,
+  list(a = 1, b = 2),
+  list(a = 2, c = 4)
+)
+df %>% mutate(
+  a = map_dbl(x, "a"),
+  b = map_dbl(x, "b", .null = NA_real_)
+)
+```
+
+### 25.5.2 Unnesting
+
+- unnest ()는 list-column의 각 요소에 대해 한 번씩 일반 열을 반복하여 작동합니다. 예를 들어, 다음의 아주 간단한 예제에서 첫 번째 행을 4 번 반복합니다 (y의 첫 번째 요소는 길이가 4이므로). 두 번째 행은 한 번만 반복합니다.
+
+```{r}
+tibble(x = 1:2, y = list(1:4, 1)) %>% unnest(y)
+```
+
+- 즉, 다른 수의 요소가 포함 된 두 개의 열을 동시에 중첩 해제 할 수 없습니다.
+
+```{r}
+df1 <- tribble(
+  ~x, ~y,           ~z,
+   1, c("a", "b"), 1:2,
+   2, "c",           3
+)
+df1
+
+df1 %>% unnest(y, z)
+
+df2 <- tribble(
+  ~x, ~y,           ~z,
+   1, "a",         1:2,  
+   2, c("b", "c"),   3
+)
+df2
+
+#df2 %>% unnest(y, z)
+```
+
+- 데이터 프레임의 목록 열을 괄호에 넣을 때도 동일한 원칙이 적용됩니다. 각 행의 모든 데이터 프레임이 같은 수의 행을 가진 한 여러 list-col을 중첩 할 수 있습니다.
+
+### 25.5.3 Exercises (생략)
+
+### 25.6 Making tidy data with broom
+
+- broom 패키지는 모델을 깔끔한 데이터 프레임으로 바꾸기위한 세 가지 일반적인 도구를 제공합니다.
+
+- broom :: glance (model) 각 모델에 대한 행을 반환합니다. 각 열은 모델 요약을 제공합니다. 모델 요약 또는 모델 복잡성 또는 둘의 조합입니다.
+
+- broom :: tidy (model) 모델의 각 계수에 대한 행을 반환합니다. 각 열은 추정치 또는 그 변동성에 대한 정보를 제공합니다.
+
+- broom :: augment (model, data)는 데이터의 각 행에 대해 행을 반환하고 잔여와 같은 추가 값을 추가하며 통계에 영향을 줍니다.
