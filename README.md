@@ -53,9 +53,14 @@
 ||(웹 머신러닝) 6장 장고 시작 |조응태 |[발표자료](https://github.com/KaggleBreak/analyticstool/tree/master/part4/WebML/20170705)
 ||(베이지안) 3. Common statistical models (3)|이상열 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/week3/week3_common.ipynb)
 |2017.07.12(수)|(R 중급) 21 Iterations |심상진 |
-||(R 중급) 22/23 Intro/Model Basics |정용환 |
+||(R 중급) 22/23 Intro/Model Basics |정용환 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/R/analytics/20170712/ModelBasics.pptx)
 ||(Network) 5. Financial Networks |조응태 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Network/20170712/V%20Financial%20Networks.ipynb)
 ||(놀러온 특강) 최적화 |심상진 |
+|2017.07.19(수)|(R 중급) 24/25 Model building/Many Models |이상열|
+||(베이지안) 4. Count data and hierarchical modeling (1) |심상진 |
+||(웹 머신러닝) 영화 추천 시스템 웹 애플리케이션 |이상열 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/WebML/20170719/myvenv/movie-time/movie_time_investigation.ipynb)
+|2017.07.26(수)|(Network) 6. Modeling ||
+||(베이지안) 4. Count data and hierarchical modeling (2) |심상진 |
 
 
 
