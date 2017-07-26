@@ -59,7 +59,7 @@
 |2017.07.19(수)|(R 중급) 24/25 Model building/Many Models |이상열|[발표자료](https://github.com/KaggleBreak/analyticstool/tree/master/part4/R/analytics/20170719)
 ||(웹 머신러닝) 영화 추천 시스템 웹 애플리케이션 |이상열 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/WebML/20170719/myvenv/movie-time/movie_time_investigation.ipynb)
 |2017.07.26(수)|(Network) 6. Modeling |조응태|[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Network/20170726/VI%20Modelling/6.%20Modelling.ipynb)
-||(베이지안) 4. Count data and hierarchical modeling |심상진 & 이상열 |[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/week4/week4_Techniques%20and%20Models.ipynb)
+||(베이지안) 4. Count data and hierarchical modeling |심상진|[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part4/Bayesian/week4/week4_Techniques%20and%20Models.ipynb)
 
 
 
