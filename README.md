@@ -1,26 +1,38 @@
 # 캐글즐기기 (2017년 새시작)
 
-캐글뽀개기 파트4 평일반 스터디 자료모음
+캐글뽀개기 파트5 평일반 스터디 자료모음
 
 * https://www.facebook.com/groups/kagglebreak/
 * https://drive.google.com/drive/folders/0B2l0iH28o85xcHJRNWNUc1FvbEk
 * 장소 : 토즈 강남점 
-* 매주 수요일 
+* 파트5는 격주 수요일 
 * 스터디 KossLab(공개SW 개발자센터)에서 장소를 지원하고 있습니다.
 
 ## 교재
+
+* 수리통계, 주교재 최신 수리통계학 출판사 경문사 저자 안승철,이재원,최원
+* 선형대수학, 주교재 프로그래머를 위한 선형대수
+* 네트워크 분석, 주교재 Python for Graph and Network Analysis
+* 네트워크 실습, 로켓펀치 프로젝트 (https://www.rocketpunch.com/)
+
+### preivos 교재 
+```
 * R for Data Science (http://r4ds.had.co.nz/)
 * Data Science and Complex Networks Real Case Studies with Python (https://global.oup.com/academic/product/data-science-and-complex-networks-9780199639601?cc=kr&lang=en&)
 * Shiny 튜토리얼 따라하기 (https://shiny.rstudio.com/tutorial/)
 * 웹을 위한 머신러닝 (http://www.yes24.com/24/Goods/37151418?Acode=101)
 * Bayesian Statistics : Techniques and Models (https://www.coursera.org/learn/mcmc-bayesian-statistics)
+```
 
-### preivos 교재
-```
-* Kaggle Kernel 따라하기 (https://www.kaggle.com/kernels)
-* A Byte of Python (http://byteofpython-korean.sourceforge.net/byte_of_python.html)
-* 장고걸스 튜토리얼 (https://tutorial.djangogirls.org/ko/)
-```
+
+## Part5 커리큘럼
+|요일   |주제   |발표자   |발표자료   |   |
+|---|---|---|---|---|
+|2017.09.13(수)|(선형대수학) 1장 벡터ㆍ행렬ㆍ행렬식 - ‘공간’에서 생각하자 |서범석|||
+||(수리통계학) 제1장 확률의 소개 |김선화|||
+||(네트워크) Network Basic |조응태|||
+
+
 
 ## Part4 커리큘럼
 |요일   |주제   |발표자   |발표자료   |   |
