@@ -13,7 +13,6 @@
 * 수리통계, 주교재 최신 수리통계학 출판사 경문사 저자 안승철,이재원,최원
 * 선형대수학, 주교재 프로그래머를 위한 선형대수
 * 네트워크 분석, 주교재 Python for Graph and Network Analysis
-* 네트워크 실습, 로켓펀치 프로젝트 (https://www.rocketpunch.com/)
 
 ### preivos 교재 
 ```
