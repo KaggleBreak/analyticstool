@@ -1,6 +1,6 @@
-# 캐글즐기기 (2017년 새시작)
+# 함수산책 (이전 이름 캐글즐기기)
 
-캐글뽀개기 파트5 평일반 스터디 자료모음
+함수산책 (캐글뽀개기) 파트5 평일반 스터디 자료모음
 
 * https://www.facebook.com/groups/kagglebreak/
 * https://drive.google.com/drive/folders/0B2l0iH28o85xcHJRNWNUc1FvbEk
