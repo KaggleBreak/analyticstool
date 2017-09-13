@@ -28,8 +28,8 @@
 |요일   |주제   |발표자   |발표자료   |   |
 |---|---|---|---|---|
 |2017.09.13(수)|(선형대수학) 1장 벡터ㆍ행렬ㆍ행렬식 - ‘공간’에서 생각하자 |서범석|||
-||(수리통계학) 제1장 확률의 소개 |김선화|||
-||(네트워크) Network Basic |조응태|||
+||(수리통계학) 제1장 확률의 소개 |김선화||[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part5/statistics/ch1/1%EC%9E%A5_%ED%99%95%EB%A5%A0%EC%9D%98_%EC%86%8C%EA%B0%9C.html.docx)|
+||(네트워크) Network Basic |조응태||[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part5/graph/Ch01/Ch01%20Theoretical%20Concepts%20of%20Network%20Analysis.ipynb)|
 
 
 
