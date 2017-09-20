@@ -33,7 +33,7 @@
 |2017.09.27(수)|(선형대수학) 1장 벡터ㆍ행렬ㆍ행렬식 - ‘공간’에서 생각하자(2) |서범석|||
 ||(수리통계학) 제2장 확률변수와 분포 |방효석|||
 ||(네트워크) Ch1. Theoretical Concepts of Network Analysis (2) |조응태|[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part5/graph/Ch01/Ch01%20Theoretical%20Concepts%20of%20Network%20Analysis.ipynb)||
-||(네트워크) Network Basic (1) |Hwang John|||
+||(네트워크) Network Basic (1) |황중원|||
 
 
 
