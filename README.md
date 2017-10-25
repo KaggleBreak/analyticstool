@@ -38,8 +38,8 @@
 ||(수리통계학) 제3장 기댓값|김가경|||
 ||(네트워크) Ch3. Graph Theory |공민서|[발표자료](http://nbviewer.jupyter.org/format/slides/gist/rrbb014/61b202be2f754308d4fa2befbcb14738#/)
 |2017.10.25(수)|(선형대수학) 3장 컴퓨터에서의 계산 (1) - LU 분해로 가자 (1) |김선화|||
-||(수리통계학) 제4장 특수한 확률분포들|이상열||[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part5/statistics/ch4/distribution.html)|
-||(네트워크) Ch4. Social Networks |조응태||[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part5/graph/ch04/Ch04%20-%20Social%20Networks%20(rev.%202).ipynb)|
+||(수리통계학) 제4장 특수한 확률분포들|이상열|[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part5/statistics/ch4/distribution.html)||
+||(네트워크) Ch4. Social Networks |조응태|[발표자료](https://github.com/KaggleBreak/analyticstool/blob/master/part5/graph/ch04/Ch04%20-%20Social%20Networks%20(rev.%202).ipynb)||
 
 
 
