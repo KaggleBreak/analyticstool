@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="ko" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>파일:Dis Uniform distribution CDF.svg - 위키백과, 우리 모두의 백과사전</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"File","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":6,"wgPageName":"파일:Dis_Uniform_distribution_CDF.svg","wgTitle":"Dis Uniform distribution CDF.svg","wgCurRevisionId":0,"wgRevisionId":0,"wgArticleId":0,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"ko","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"ko","wgMonthNames":["","1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],"wgMonthNamesShort":["","1","2","3","4","5","6","7","8","9","10","11","12"],"wgRelevantPageName":"파일:Dis_Uniform_distribution_CDF.svg","wgRelevantArticleId":0,"wgRequestId":"We8mTQpAMFQAAFbffBcAAAAW","wgIsProbablyEditable":true,"wgRelevantPageIsProbablyEditable":true,"wgRestrictionCreate":[],"wgRestrictionUpload":[],"wgWikiEditorEnabledModules":{"toolbar":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":false,"wgPopupsShouldSendModuleToUser":true,"wgPopupsConflictsWithNavPopupGadget":false,"wgVisualEditor":{"pageLanguageCode":"ko","pageLanguageDir":"ltr","pageVariantFallbacks":"ko","usePageImages":true,"usePageDescriptions":true},"wgPreferredVariant":"ko","wgMFExpandAllSectionsUserOption":false,"wgMFDisplayWikibaseDescriptions":{"search":true,"nearby":true,"watchlist":true,"tagline":true},"wgRelatedArticles":null,"wgRelatedArticlesUseCirrusSearch":true,"wgRelatedArticlesOnlyUseCirrusSearch":false,"wgULSCurrentAutonym":"한국어","wgNoticeProject":"wikipedia","wgCentralNoticeCookiesToDelete":[],"wgCentralNoticeCategoriesUsingLegacy":["Fundraising","fundraising"],"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgCentralAuthMobileDomain":false,"wgCodeMirrorEnabled":false,"wgVisualEditorToolbarScrollOffset":0,"wgVisualEditorUnsupportedEditParams":["undo","undoafter","veswitched"],"wgEditSubmitButtonLabelPublish":true,"wgSiteNoticeId":"2.45"});mw.loader.state({"ext.globalCssJs.user.styles":"ready","ext.globalCssJs.site.styles":"ready","site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"loading","user.tokens":"loading","filepage":"ready","mediawiki.action.view.filepage":"ready","ext.visualEditor.desktopArticleTarget.noscript":"ready","ext.uls.interlanguage":"ready","ext.wikimediaBadges":"ready","skins.vector.styles.experimental.print":"ready","ext.dismissableSiteNotice.styles":"ready","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.sectionAnchor":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready","ext.globalCssJs.user":"ready","ext.globalCssJs.site":"ready"});mw.loader.implement("user.options@0wbah9t",function($,jQuery,require,module){mw.user.options.set({"variant":"ko"});});mw.loader.implement("user.tokens@1dqfd7l",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/
+
+});mw.loader.load(["site","mediawiki.page.startup","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.gadget.ReferenceTooltips","ext.gadget.directcommons","ext.gadget.refToolbar","ext.centralauth.centralautologin","mmv.head","mmv.bootstrap.autostart","ext.popups","ext.visualEditor.desktopArticleTarget.init","ext.visualEditor.targetLoader","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.navigationTiming","ext.uls.eventlogger","ext.uls.init","ext.uls.compactlinks","ext.uls.interface","ext.centralNotice.geoIP","ext.centralNotice.startUp","skins.vector.js","ext.dismissableSiteNotice"]);});</script>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=ko&amp;modules=ext.dismissableSiteNotice.styles%7Cext.uls.interlanguage%7Cext.visualEditor.desktopArticleTarget.noscript%7Cext.wikimediaBadges%7Cmediawiki.action.view.filepage%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles%7Cskins.vector.styles.experimental.print&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/w/load.php?debug=false&amp;lang=ko&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<link rel="stylesheet" href="https://commons.wikimedia.org/w/index.php?title=MediaWiki:Filepage.css&amp;action=raw&amp;maxage=1209600&amp;usemsgcache=yes&amp;ctype=text%2Fcss&amp;smaxage=1209600"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=ko&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.31.0-wmf.4"/>
+<meta name="referrer" content="origin-when-cross-origin"/>
+<link rel="alternate" type="application/x-wiki" title="편집" href="/w/index.php?title=%ED%8C%8C%EC%9D%BC:Dis_Uniform_distribution_CDF.svg&amp;action=edit"/>
+<link rel="edit" title="편집" href="/w/index.php?title=%ED%8C%8C%EC%9D%BC:Dis_Uniform_distribution_CDF.svg&amp;action=edit"/>
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png"/>
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="위키백과 (ko)"/>
+<link rel="EditURI" type="application/rsd+xml" href="//ko.wikipedia.org/w/api.php?action=rsd"/>
+<link rel="license" href="//creativecommons.org/licenses/by-sa/3.0/"/>
+<link rel="alternate" type="application/atom+xml" title="위키백과 Atom 피드" href="/w/index.php?title=%ED%8A%B9%EC%88%98:%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C&amp;feed=atom"/>
+<link rel="canonical" href="https://commons.wikimedia.org/wiki/File:Dis_Uniform_distribution_CDF.svg"/>
+<link rel="dns-prefetch" href="//login.wikimedia.org"/>
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<!--[if lt IE 9]><script src="/w/load.php?debug=false&amp;lang=ko&amp;modules=html5shiv&amp;only=scripts&amp;skin=vector&amp;sync=1"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-6 ns-subject page-파일_Dis_Uniform_distribution_CDF_svg rootpage-파일_Dis_Uniform_distribution_CDF_svg vector-experimental-print-styles vector-nav-directionality skin-vector action-view">		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice" class="mw-body-content"><!-- CentralNotice --><div id="mw-dismissablenotice-anonplace"></div><script>(function(){var node=document.getElementById("mw-dismissablenotice-anonplace");if(node){node.outerHTML="\u003Cdiv class=\"mw-dismissable-notice\"\u003E\u003Cdiv class=\"mw-dismissable-notice-close\"\u003E[\u003Ca href=\"#\"\u003E숨기기\u003C/a\u003E]\u003C/div\u003E\u003Cdiv class=\"mw-dismissable-notice-body\"\u003E\u003Cdiv id=\"localNotice\" lang=\"ko\" dir=\"ltr\"\u003E\u003Cdiv class=\"mw-parser-output\"\u003E\u003Cdiv class=\"plainlinks\" style=\"width:100%; font-size: 100%; text-align: center; padding: 0.5ex;\"\u003E\n\u003Cul\u003E\u003Cli\u003E \u003Ca href=\"/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%84%9C%EC%82%B0%EC%8B%9C_%EC%98%A8%EB%9D%BC%EC%9D%B8_%EC%97%90%EB%94%94%ED%84%B0%ED%86%A4\" title=\"위키백과:서산시 온라인 에디터톤\"\u003E서산시 온라인 에디터톤\u003C/a\u003E이 10월 23일부터 11월 10일까지 열립니다\u003C/div\u003E\u003C/li\u003E\u003C/ul\u003E\n\u003C/div\u003E\u003C/div\u003E\u003C/div\u003E\u003C/div\u003E";}}());</script></div>
+						<div class="mw-indicators mw-body-content">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="ko">파일:Dis Uniform distribution CDF.svg</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub" class="noprint">위키백과, 우리 모두의 백과사전.</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					이동:					<a href="#mw-head">둘러보기</a>, 					<a href="#p-search">검색</a>
+				</div>
+				<div id="mw-content-text"><ul id="filetoc"><li><a href="#file">파일</a></li>
+<li><a href="#filehistory">파일 역사</a></li>
+<li><a href="#filelinks">이 파일을 사용하는 문서</a></li>
+<li><a href="#globalusage">이 파일을 사용하고 있는 모든 위키의 문서 목록</a></li></ul><div class="fullImageLink" id="file"><a href="//upload.wikimedia.org/wikipedia/commons/7/77/Dis_Uniform_distribution_CDF.svg"><img alt="파일:Dis Uniform distribution CDF.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Dis_Uniform_distribution_CDF.svg/800px-Dis_Uniform_distribution_CDF.svg.png" width="800" height="600" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Dis_Uniform_distribution_CDF.svg/1200px-Dis_Uniform_distribution_CDF.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/77/Dis_Uniform_distribution_CDF.svg/1600px-Dis_Uniform_distribution_CDF.svg.png 2x" data-file-width="1200" data-file-height="900" /></a><div class="mw-filepage-resolutioninfo">SVG 파일의 PNG 형식의 미리보기 크기: <a href="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Dis_Uniform_distribution_CDF.svg/800px-Dis_Uniform_distribution_CDF.svg.png" class="mw-thumbnail-link">800 × 600 픽셀</a>. <span class="mw-filepage-other-resolutions">다른 해상도: <a href="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Dis_Uniform_distribution_CDF.svg/320px-Dis_Uniform_distribution_CDF.svg.png" class="mw-thumbnail-link">320 × 240 픽셀</a> | <a href="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Dis_Uniform_distribution_CDF.svg/640px-Dis_Uniform_distribution_CDF.svg.png" class="mw-thumbnail-link">640 × 480 픽셀</a> | <a href="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Dis_Uniform_distribution_CDF.svg/1024px-Dis_Uniform_distribution_CDF.svg.png" class="mw-thumbnail-link">1,024 × 768 픽셀</a> | <a href="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Dis_Uniform_distribution_CDF.svg/1280px-Dis_Uniform_distribution_CDF.svg.png" class="mw-thumbnail-link">1,280 × 960 픽셀</a> | <a href="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Dis_Uniform_distribution_CDF.svg/1200px-Dis_Uniform_distribution_CDF.svg.png" class="mw-thumbnail-link">1,200 × 900 픽셀</a></span></div></div>
+<div class="fullMedia"><a href="//upload.wikimedia.org/wikipedia/commons/7/77/Dis_Uniform_distribution_CDF.svg" class="internal" title="Dis Uniform distribution CDF.svg">원본 파일</a> &#8206;<span class="fileInfo">(SVG 파일, 실제 크기 1,200 × 900 픽셀, 파일 크기: 11 KB)</span>
+</div>
+<div class="sharedUploadNotice">
+<table class="plainlinks fmbox fmbox-system" role="presentation"><tr><td class="mbox-image"><img alt="Commons-logo.svg" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/30px-Commons-logo.svg.png" width="30" height="40" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/45px-Commons-logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Commons-logo.svg/59px-Commons-logo.svg.png 2x" data-file-width="1024" data-file-height="1376" /></td><td class="mbox-text" style="font-size: 90%; text-align: center;"><big>이 자료는 <a class="external text" href="https://commons.wikimedia.org/wiki/%EB%8C%80%EB%AC%B8?uselang=ko">위키미디어 공용</a>에 있습니다. 이 자료의 자세한 정보는 <b><a class="external text" href="https://commons.wikimedia.org/wiki/Image:Dis_Uniform_distribution_CDF.svg?uselang=ko">공용의 자료 문서</a></b>를 참조해주세요.</big><br/>위키미디어 공용은 우리 모두의 미디어 파일 저장소입니다. <a class="external text" href="https://commons.wikimedia.org/wiki/Commons:%ED%99%98%EC%98%81%ED%95%A9%EB%8B%88%EB%8B%A4?uselang=ko">도움을 보태주세요</a>.</td></tr></table>
+</div>
+<div id="shared-image-desc"><div class="mw-parser-output"><div class="hproduct commons-file-information-table">
+<table class="fileinfotpl-type-information toccolours vevent mw-content-ltr" style="width: 100%; direction: ltr;" cellpadding="4">
+<tr style="vertical-align: top">
+<td id="fileinfotpl_desc" class="fileinfo-paramfield" lang="ko">설명<span class="summary fn" style="display:none">Dis Uniform distribution CDF.svg</span></td>
+<td class="description">
+<p>Discrete uniform distribution (cumulative distribution function). Generated with the following R code:</p>
+<pre>
+svg(file="Dis_Uniform_distribution_CDF.svg",width=4,height=3,pointsize=12)
+
+par(mar=c(3,3,1,1))
+
+n &lt;- 5
+plot(c(0,n),c(0,1),type="n")
+for(x in n:0)
+{
+lines(c(x,x+1),rep(x/n,2),col="blue")
+  if (x&gt;0)
+  {
+    points(x,(x-1)/n,col="white",pch=19)
+    points(x,(x-1)/n,col="blue",pch=21)
+    points(x,x/n,col="blue",pch=19)
+  }
+}
+dev.off()
+</pre></td>
+</tr>
+<tr style="vertical-align: top">
+<td id="fileinfotpl_date" class="fileinfo-paramfield" lang="ko">날짜</td>
+<td lang="ko"><span style="white-space:nowrap"><time class="dtstart" datetime="2007-06-25">2007년 6월 25일</time></span></td>
+</tr>
+<tr style="vertical-align: top">
+<td id="fileinfotpl_src" class="fileinfo-paramfield" lang="ko">출처</td>
+<td><a href="https://en.wikipedia.org/wiki/Image:Dis_Uniform_distribution_CDF.png" class="extiw" title="en:Image:Dis Uniform distribution CDF.png">en:Image:Dis Uniform distribution CDF.png</a></td>
+</tr>
+<tr style="vertical-align: top">
+<td id="fileinfotpl_aut" class="fileinfo-paramfield" lang="ko">저자</td>
+<td><a href="https://en.wikipedia.org/wiki/User:Pdbailey" class="extiw" title="en:User:Pdbailey">en:User:Pdbailey</a>, traced by <a href="//commons.wikimedia.org/wiki/User:Stannered" title="User:Stannered">User:Stannered</a></td>
+</tr>
+<tr style="vertical-align: top">
+<td id="fileinfotpl_perm" class="fileinfo-paramfield" lang="ko">저작권<br />
+<small>(<a href="//commons.wikimedia.org/wiki/Commons:%EC%9C%84%ED%82%A4%EB%AF%B8%EB%94%94%EC%96%B4_%EB%B0%96%EC%97%90%EC%84%9C_%EC%BD%98%ED%85%90%EC%B8%A0_%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0" class="mw-redirect" title="Commons:위키미디어 밖에서 콘텐츠 활용하기">이 파일을 인용하기</a>)</small></td>
+<td>
+<p>GPL/GFDL</p>
+</td>
+</tr>
+<tr style="vertical-align: top">
+<td id="fileinfotpl_ver" class="fileinfo-paramfield" lang="ko">다른 버전</td>
+<td>
+<p><a href="https://en.wikipedia.org/wiki/Image:Dis_Uniform_distribution_CDF.png" class="extiw" title="en:Image:Dis Uniform distribution CDF.png">en:Image:Dis Uniform distribution CDF.png</a></p>
+</td>
+</tr>
+</table>
+</div>
+<table cellspacing="8" cellpadding="0" style="width:100%; clear:both; margin:0.5em auto; background-color:#f9f9f9; border:2px solid #e0e0e0; direction: ltr;" lang="ko" class="layouttemplate licensetpl">
+<tr>
+<td><img alt="GNU head" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/64px-Heckert_GNU_white.svg.png" title="GNU head" width="64" height="63" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/96px-Heckert_GNU_white.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/128px-Heckert_GNU_white.svg.png 2x" data-file-width="535" data-file-height="523" /></td>
+<td>이 저작물은 <a href="https://en.wikipedia.org/wiki/ko:%EC%9E%90%EC%9C%A0_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4" class="extiw" title="w:ko:자유 소프트웨어">자유 소프트웨어</a>입니다. 당신은 <a href="https://en.wikipedia.org/wiki/ko:%EC%9E%90%EC%9C%A0_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4_%EC%9E%AC%EB%8B%A8" class="extiw" title="w:ko:자유 소프트웨어 재단">자유 소프트웨어 재단</a>이 발표한 <b><a href="https://en.wikipedia.org/wiki/ko:GNU_%EC%9D%BC%EB%B0%98_%EA%B3%B5%EC%A4%91_%EC%82%AC%EC%9A%A9_%ED%97%88%EA%B0%80%EC%84%9C" class="extiw" title="w:ko:GNU 일반 공중 사용 허가서">GNU 일반 공중 사용 허가서</a></b> 버전 2나 그 이후 버전에 따라 이 파일을 재배포하거나 수정할 수 있습니다. 이 저작물이 유용하게 사용될 수 있기를 바라지만 <b>상용</b>으로 사용되거나 <b>특정 목적에 맞을 것</b>이라는 것을 <b>보증하지 않습니다</b>. 자세한 내용은 GNU 일반 공중 사용 허가서 <a rel="nofollow" class="external text" href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">버전 2</a>와 <a rel="nofollow" class="external text" href="https://www.gnu.org/copyleft/gpl-3.0.html">버전 3 전문</a>을 참조하십시오.<span class="licensetpl_link" style="display:none;">http://www.gnu.org/licenses/gpl.html</span><span class="licensetpl_short" style="display:none;">GPL</span><span class="licensetpl_long" style="display:none;">GNU General Public License</span><span class="licensetpl_link_req" style="display:none;">true</span><span class="licensetpl_attr_req" style="display:none;">true</span></td>
+</tr>
+</table>
+<table cellspacing="8" cellpadding="0" style="width:100%; clear:both; margin:0.5em auto; background-color:#f9f9f9; border:2px solid #e0e0e0; direction: ltr;" lang="ko" class="layouttemplate licensetpl">
+<tr>
+<td><a href="//commons.wikimedia.org/wiki/File:Heckert_GNU_white.svg" class="image" title="GNU head"><img alt="GNU head" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/64px-Heckert_GNU_white.svg.png" width="64" height="63" class="noviewer" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/96px-Heckert_GNU_white.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Heckert_GNU_white.svg/128px-Heckert_GNU_white.svg.png 2x" data-file-width="535" data-file-height="523" /></a></td>
+<td><b><a href="https://en.wikipedia.org/wiki/ko:GNU_%EC%9E%90%EC%9C%A0_%EB%AC%B8%EC%84%9C_%EC%82%AC%EC%9A%A9_%ED%97%88%EA%B0%80%EC%84%9C" class="extiw" title="w:ko:GNU 자유 문서 사용 허가서">GNU 자유 문서 사용 허가서</a></b> 1.2판 또는 <a href="https://en.wikipedia.org/wiki/ko:%EC%9E%90%EC%9C%A0_%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4_%EC%9E%AC%EB%8B%A8" class="extiw" title="w:ko:자유 소프트웨어 재단">자유 소프트웨어 재단</a>에서 발행한 이후 판의 규정에 따라 본 문서를 복제하거나 개작 및 배포할 수 있습니다. 본 문서에는 변경 불가 부분이 없으며, 앞 표지 구절과 뒷 표지 구절도 없습니다. 본 사용 허가서의 전체 내용은 <a href="//commons.wikimedia.org/wiki/Commons:GNU_Free_Documentation_License,_version_1.2" title="Commons:GNU Free Documentation License, version 1.2">GNU 자유 문서 사용 허가서</a> 부분에 포함되어 있습니다. <a href="https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" class="extiw" title="en:Wikipedia:General disclaimer">면책 조항</a>이 적용됩니다.<span class="licensetpl_link" style="display:none;">http://www.gnu.org/copyleft/fdl.html</span><span class="licensetpl_short" style="display:none;">GFDL</span><span class="licensetpl_long" style="display:none;">GNU Free Documentation License</span><span class="licensetpl_link_req" style="display:none;">true</span><span class="licensetpl_attr_req" style="display:none;">true</span></td>
+</tr>
+</table>
+<table style="width:100%; clear:both; text-align:center; margin:0.5em auto; background-color:#f9f9f9; border:2px solid #e0e0e0; padding: 0; border-spacing: 8px;" class="layouttemplate licensetpl mw-content-ltr" lang="ko">
+<tr>
+<td style="width:90px;" rowspan="4"><img alt="w:ko:크리에이티브 커먼즈" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/90px-CC_some_rights_reserved.svg.png" title="w:ko:크리에이티브 커먼즈" width="90" height="36" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/135px-CC_some_rights_reserved.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/CC_some_rights_reserved.svg/180px-CC_some_rights_reserved.svg.png 2x" data-file-width="744" data-file-height="300" /><br />
+<img alt="저작자표시" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/24px-Cc-by_new_white.svg.png" title="저작자표시" width="24" height="24" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/36px-Cc-by_new_white.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Cc-by_new_white.svg/48px-Cc-by_new_white.svg.png 2x" data-file-width="64" data-file-height="64" /> <img alt="동일조건변경허락" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Cc-sa.svg/24px-Cc-sa.svg.png" title="동일조건변경허락" width="24" height="24" srcset="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Cc-sa.svg/36px-Cc-sa.svg.png 1.5x, https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Cc-sa.svg/48px-Cc-sa.svg.png 2x" data-file-width="64" data-file-height="64" /></td>
+<td>이 파일은 <a href="https://en.wikipedia.org/wiki/ko:%ED%81%AC%EB%A6%AC%EC%97%90%EC%9D%B4%ED%8B%B0%EB%B8%8C_%EC%BB%A4%EB%A8%BC%EC%A6%88" class="extiw" title="w:ko:크리에이티브 커먼즈">크리에이티브 커먼즈</a> <a rel="nofollow" class="external text" href="//creativecommons.org/licenses/by-sa/3.0/deed.ko">저작자표시-동일조건변경허락 3.0 Unported</a> 라이선스로 배포됩니다. <a href="https://en.wikipedia.org/wiki/Wikipedia:General_disclaimer" class="extiw" title="en:Wikipedia:General disclaimer">면책 조항</a>이 적용됩니다.</td>
+<td style="width:90px;" rowspan="4"></td>
+</tr>
+<tr style="text-align:center;">
+<td></td>
+</tr>
+<tr style="text-align:left;">
+<td>
+<dl>
+<dd>이용자는 다음의 권리를 갖습니다:
+<ul>
+<li><b>공유 및 이용</b> – 저작물의 복제, 배포, 전시, 공연 및 공중송신.</li>
+<li><b>재창작</b> – 저작물의 개작, 수정, 이차저작물 작성.</li>
+</ul>
+</dd>
+<dd>다음과 같은 조건을 따라야 합니다:
+<ul>
+<li><b>저작자표시</b> – 저작자나 이용허락자가 정한 방법으로 저작물의 원저작자를 표시하여야 합니다(그러나 원저작자가 이용자나 이용자의 이용을 보증하거나 추천한다는 의미로 표시해서는 안 됩니다).</li>
+<li><b>동일조건변경허락</b> – 이 저작물을 이용하여 만든 2차저작물에는 본 라이선스와 동일하거나 유사한 라이선스를 적용해야 합니다.</li>
+</ul>
+</dd>
+</dl>
+</td>
+</tr>
+<tr style="text-align:center;">
+<td><span style="font-size:90%;">이 라이선스 틀은 GFDL <a href="https://meta.wikimedia.org/wiki/Licensing_update/ko" class="extiw" title="meta:Licensing update/ko">라이선스 변경</a>의 일부로 이 파일에 추가되었습니다.</span><span class="licensetpl_link" style="display:none;">http://creativecommons.org/licenses/by-sa/3.0/</span><span class="licensetpl_short" style="display:none;">CC-BY-SA-3.0</span><span class="licensetpl_long" style="display:none;">Creative Commons Attribution-Share Alike 3.0</span>
+<p><span class="licensetpl_link_req" style="display:none;">true</span><span class="licensetpl_attr_req" style="display:none;">true</span></p>
+</td>
+</tr>
+</table>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1274
+Cached time: 20171024113854
+Cache expiry: 86400
+Dynamic content: true
+CPU time usage: 0.092 seconds
+Real time usage: 0.131 seconds
+Preprocessor visited node count: 913/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 27897/2097152 bytes
+Template argument size: 1442/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/500
+Lua time usage: 0.016/10.000 seconds
+Lua memory usage: 945 KB/50 MB
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  101.286      1 -total
+ 59.62%   60.386      1 Template:Information
+ 32.53%   32.947      1 Template:GFDL-en
+ 29.30%   29.674      1 Template:GFDL-disclamers
+ 25.64%   25.967      1 Template:ISOdate
+ 13.81%   13.992      1 Template:License_migration
+ 12.90%   13.065      2 Template:GFDL-disclamers/i18n
+ 11.62%   11.765      1 Template:License_migration_complete
+ 10.94%   11.084      1 Template:Years_since
+  9.67%    9.798      1 Template:Cc-by-sa-3.0-migrated-with-disclaimers
+-->
+</div>
+<!-- Saved in parser cache with key commonswiki:pcache:idhash:2302572-1!userlang=ko and timestamp 20171024113854 and revision id 132941299
+ -->
+</div>
+<h2 id="filehistory">파일 역사</h2>
+<div id="mw-imagepage-section-filehistory">
+<p>날짜/시간 링크를 클릭하면 해당 시간의 파일을 볼 수 있습니다.
+</p>
+<table class="wikitable filehistory">
+<tr><th></th><th>날짜/시간</th><th>섬네일</th><th>크기</th><th>사용자</th><th>댓글</th></tr>
+<tr><td>현재</td><td class='filehistory-selected' style='white-space: nowrap;'><a href="//upload.wikimedia.org/wikipedia/commons/7/77/Dis_Uniform_distribution_CDF.svg">2007년 6월 25일 (월) 09:22</a></td><td><a href="//upload.wikimedia.org/wikipedia/commons/7/77/Dis_Uniform_distribution_CDF.svg"><img alt="2007년 6월 25일 (월) 09:22 판의 섬네일" src="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/Dis_Uniform_distribution_CDF.svg/120px-Dis_Uniform_distribution_CDF.svg.png" width="120" height="90" data-file-width="1200" data-file-height="900" /></a></td><td>1,200 × 900 <span style="white-space: nowrap;">(11 KB)</span></td><td>Stannered</td><td dir="ltr">{{Information |Description=Discrete uniform distribution (cumulative distribution function). Generated with the following R code: &lt;pre&gt; bitmap(file=&quot;PoissonCDF.png&quot;,type=&quot;png256&quot;,width=4,height=3,res=300,pointsize=12) par(mar=c(3,3,1,1))   lambda &lt;- c(4,1</td></tr>
+</table>
+
+</div>
+<h2 id="filelinks">이 파일을 사용하는 문서</h2>
+<div id='mw-imagepage-section-linkstoimage'>
+<p>다음 문서 1개가 이 파일을 가리키고 있습니다:
+</p><ul class="mw-imagepage-linkstoimage">
+<li class="mw-imagepage-linkstoimage-ns0"><a href="/wiki/%EC%9D%B4%EC%82%B0%EA%B7%A0%EB%93%B1%EB%B6%84%ED%8F%AC" title="이산균등분포">이산균등분포</a></li>
+</ul>
+</div>
+<h2 id="globalusage">이 파일을 사용하고 있는 모든 위키의 문서 목록</h2>
+<div id="mw-imagepage-section-globalusage"><p>다음 위키에서 이 파일을 사용하고 있습니다:
+</p><ul>
+<li class='mw-gu-onwiki-de_wikipedia_org'>de.wikipedia.org에서 이 파일을 사용하고 있는 문서 목록
+<ul>	<li><a class="external" href="//de.wikipedia.org/wiki/Diskrete_Gleichverteilung">Diskrete Gleichverteilung</a></li>
+</ul></li>
+<li class='mw-gu-onwiki-en_wikipedia_org'>en.wikipedia.org에서 이 파일을 사용하고 있는 문서 목록
+<ul>	<li><a class="external" href="//en.wikipedia.org/wiki/Discrete_uniform_distribution">Discrete uniform distribution</a></li>
+</ul></li>
+<li class='mw-gu-onwiki-fa_wikipedia_org'>fa.wikipedia.org에서 이 파일을 사용하고 있는 문서 목록
+<ul>	<li><a class="external" href="//fa.wikipedia.org/wiki/%D8%AA%D9%88%D8%B2%DB%8C%D8%B9_%DB%8C%DA%A9%D9%86%D9%88%D8%A7%D8%AE%D8%AA_%DA%AF%D8%B3%D8%B3%D8%AA%D9%87">توزیع یکنواخت گسسته</a></li>
+</ul></li>
+<li class='mw-gu-onwiki-fi_wikipedia_org'>fi.wikipedia.org에서 이 파일을 사용하고 있는 문서 목록
+<ul>	<li><a class="external" href="//fi.wikipedia.org/wiki/Satunnaismuuttuja">Satunnaismuuttuja</a></li>
+	<li><a class="external" href="//fi.wikipedia.org/wiki/Diskreetti_tasainen_jakauma">Diskreetti tasainen jakauma</a></li>
+</ul></li>
+<li class='mw-gu-onwiki-fr_wikipedia_org'>fr.wikipedia.org에서 이 파일을 사용하고 있는 문서 목록
+<ul>	<li><a class="external" href="//fr.wikipedia.org/wiki/Loi_uniforme_discr%C3%A8te">Loi uniforme discrète</a></li>
+</ul></li>
+<li class='mw-gu-onwiki-gl_wikipedia_org'>gl.wikipedia.org에서 이 파일을 사용하고 있는 문서 목록
+<ul>	<li><a class="external" href="//gl.wikipedia.org/wiki/Distribuci%C3%B3n_uniforme_discreta">Distribución uniforme discreta</a></li>
+</ul></li>
+<li class='mw-gu-onwiki-he_wikibooks_org'>he.wikibooks.org에서 이 파일을 사용하고 있는 문서 목록
+<ul>	<li><a class="external" href="//he.wikibooks.org/wiki/%D7%94%D7%A1%D7%AA%D7%91%D7%A8%D7%95%D7%AA/%D7%9E%D7%A9%D7%AA%D7%A0%D7%99%D7%9D_%D7%9E%D7%A7%D7%A8%D7%99%D7%99%D7%9D/%D7%9E%D7%A9%D7%AA%D7%A0%D7%99%D7%9D_%D7%9E%D7%A7%D7%A8%D7%99%D7%99%D7%9D_%D7%91%D7%93%D7%99%D7%93%D7%99%D7%9D/%D7%94%D7%AA%D7%A4%D7%9C%D7%92%D7%95%D7%AA_%D7%99%D7%95%D7%A0%D7%99%D7%A4%D7%95%D7%A8%D7%9E%D7%99%D7%AA">הסתברות/משתנים מקריים/משתנים מקריים בדידים/התפלגות יוניפורמית</a></li>
+</ul></li>
+<li class='mw-gu-onwiki-hu_wikipedia_org'>hu.wikipedia.org에서 이 파일을 사용하고 있는 문서 목록
+<ul>	<li><a class="external" href="//hu.wikipedia.org/wiki/Diszkr%C3%A9t_egyenletes_eloszl%C3%A1s">Diszkrét egyenletes eloszlás</a></li>
+</ul></li>
+<li class='mw-gu-onwiki-ja_wikipedia_org'>ja.wikipedia.org에서 이 파일을 사용하고 있는 문서 목록
+<ul>	<li><a class="external" href="//ja.wikipedia.org/wiki/%E9%9B%A2%E6%95%A3%E4%B8%80%E6%A7%98%E5%88%86%E5%B8%83">離散一様分布</a></li>
+</ul></li>
+<li class='mw-gu-onwiki-pl_wikipedia_org'>pl.wikipedia.org에서 이 파일을 사용하고 있는 문서 목록
+<ul>	<li><a class="external" href="//pl.wikipedia.org/wiki/Rozk%C5%82ad_jednostajny_dyskretny">Rozkład jednostajny dyskretny</a></li>
+</ul></li>
+<li class='mw-gu-onwiki-sl_wikipedia_org'>sl.wikipedia.org에서 이 파일을 사용하고 있는 문서 목록
+<ul>	<li><a class="external" href="//sl.wikipedia.org/wiki/Diskretna_enakomerna_porazdelitev">Diskretna enakomerna porazdelitev</a></li>
+</ul></li>
+<li class='mw-gu-onwiki-th_wikipedia_org'>th.wikipedia.org에서 이 파일을 사용하고 있는 문서 목록
+<ul>	<li><a class="external" href="//th.wikipedia.org/wiki/%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B9%81%E0%B8%88%E0%B8%81%E0%B9%81%E0%B8%88%E0%B8%87%E0%B9%80%E0%B8%AD%E0%B8%81%E0%B8%A3%E0%B8%B9%E0%B8%9B_(%E0%B8%A7%E0%B8%B4%E0%B8%A2%E0%B8%B8%E0%B8%95)">การแจกแจงเอกรูป (วิยุต)</a></li>
+</ul></li>
+<li class='mw-gu-onwiki-tr_wikipedia_org'>tr.wikipedia.org에서 이 파일을 사용하고 있는 문서 목록
+<ul>	<li><a class="external" href="//tr.wikipedia.org/wiki/Tekd%C3%BCze_da%C4%9F%C4%B1l%C4%B1m_(ayr%C4%B1k)">Tekdüze dağılım (ayrık)</a></li>
+</ul></li>
+</ul>
+</div><noscript><img src="//ko.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>					<div class="printfooter">
+						원본 주소 "<a dir="ltr" href="https://ko.wikipedia.org/wiki/파일:Dis_Uniform_distribution_CDF.svg">https://ko.wikipedia.org/wiki/파일:Dis_Uniform_distribution_CDF.svg</a>"					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>둘러보기 메뉴</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">개인 도구</h3>
+						<ul>
+							<li id="pt-anonuserpage">로그인하지 않음</li><li id="pt-anontalk"><a href="/wiki/%ED%8A%B9%EC%88%98:%EB%82%B4%EC%82%AC%EC%9A%A9%EC%9E%90%ED%86%A0%EB%A1%A0" title="현재 사용하는 IP 주소에 대한 토론 문서 [n]" accesskey="n">토론</a></li><li id="pt-anoncontribs"><a href="/wiki/%ED%8A%B9%EC%88%98:%EB%82%B4%EA%B8%B0%EC%97%AC" title="이 IP 주소의 편집 목록 [y]" accesskey="y">기여</a></li><li id="pt-createaccount"><a href="/w/index.php?title=%ED%8A%B9%EC%88%98:%EA%B3%84%EC%A0%95%EB%A7%8C%EB%93%A4%EA%B8%B0&amp;returnto=%ED%8C%8C%EC%9D%BC%3ADis+Uniform+distribution+CDF.svg" title="계정을 만들고 로그인하는 것이 좋습니다; 하지만, 필수는 아닙니다">계정 만들기</a></li><li id="pt-login"><a href="/w/index.php?title=%ED%8A%B9%EC%88%98:%EB%A1%9C%EA%B7%B8%EC%9D%B8&amp;returnto=%ED%8C%8C%EC%9D%BC%3ADis+Uniform+distribution+CDF.svg" title="위키백과에 로그인하면 여러가지 편리한 기능을 사용할 수 있습니다. [o]" accesskey="o">로그인</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">이름공간</h3>
+						<ul>
+														<li id="ca-nstab-image" class="selected"><span><a href="/wiki/%ED%8C%8C%EC%9D%BC:Dis_Uniform_distribution_CDF.svg" title="파일 문서 보기 [c]" accesskey="c">파일</a></span></li>
+							<li id="ca-talk" class="new"><span><a href="/w/index.php?title=%ED%8C%8C%EC%9D%BC%ED%86%A0%EB%A1%A0:Dis_Uniform_distribution_CDF.svg&amp;action=edit&amp;redlink=1" rel="discussion" title="문서의 내용에 대한 토론 문서 [t]" accesskey="t">토론</a></span></li>
+						</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>변수</span>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">보기</h3>
+						<ul>
+														<li id="ca-view" class="collapsible selected"><span><a href="/wiki/%ED%8C%8C%EC%9D%BC:Dis_Uniform_distribution_CDF.svg">읽기</a></span></li>
+							<li id="ca-view-foreign" class="collapsible"><span><a href="https://commons.wikimedia.org/wiki/File:Dis_Uniform_distribution_CDF.svg">위키미디어 공용에서 보기</a></span></li>
+							<li id="ca-edit" class="collapsible"><span><a href="/w/index.php?title=%ED%8C%8C%EC%9D%BC:Dis_Uniform_distribution_CDF.svg&amp;action=edit" title="이 문서 편집하기 [e]" accesskey="e">로컬 설명 추가</a></span></li>
+						</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>더 보기</span></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">검색</label>
+						</h3>
+
+						<form action="/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="위키백과 검색" title="위키백과 검색 [f]" accesskey="f" id="searchInput"/><input type="hidden" value="특수:검색" name="title"/><input type="submit" name="fulltext" value="검색" title="이 문자열이 포함된 문서 검색" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="보기" title="이 이름의 문서가 존재하면 그 문서로 바로 가기" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8"  title="대문으로 가기"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>둘러보기</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8" title="대문으로 가기 [z]" accesskey="z">대문</a></li><li id="n-portal"><a href="/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%82%AC%EC%9A%A9%EC%9E%90_%EB%AA%A8%EC%9E%84" title="위키백과 참여자를 위한 토론/대화 공간입니다.">사용자 모임</a></li><li id="n-currentevents"><a href="/wiki/%ED%8F%AC%ED%84%B8:%EC%9A%94%EC%A6%98_%ED%99%94%EC%A0%9C" title="최근의 소식 알아 보기">요즘 화제</a></li><li id="n-recentchanges"><a href="/wiki/%ED%8A%B9%EC%88%98:%EC%B5%9C%EA%B7%BC%EB%B0%94%EB%80%9C" title="위키의 최근 바뀐 목록 [r]" accesskey="r">최근 바뀜</a></li><li id="n-index"><a href="/wiki/%ED%8A%B9%EC%88%98:%EB%AA%A8%EB%93%A0%EB%AC%B8%EC%84%9C">모든 문서 보기</a></li><li id="n-randompage"><a href="/wiki/%ED%8A%B9%EC%88%98:%EC%9E%84%EC%9D%98%EB%AC%B8%EC%84%9C" title="임의 문서 불러오기 [x]" accesskey="x">임의 문서로</a></li><li id="n-help"><a href="/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8F%84%EC%9B%80%EB%A7%90" title="도움말">도움말</a></li><li id="n-sitesupport"><a href="//donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_ko.wikipedia.org&amp;uselang=ko" title="지원을 기다립니다">기부</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>도구</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="/wiki/%ED%8A%B9%EC%88%98:%EA%B0%80%EB%A6%AC%ED%82%A4%EB%8A%94%EB%AC%B8%EC%84%9C/%ED%8C%8C%EC%9D%BC:Dis_Uniform_distribution_CDF.svg" title="여기를 가리키는 모든 위키 문서의 목록 [j]" accesskey="j">여기를 가리키는 문서</a></li><li id="t-upload"><a href="/wiki/위키백과:파일_올리기" title="파일 올리기 [u]" accesskey="u">파일 올리기</a></li><li id="t-specialpages"><a href="/wiki/%ED%8A%B9%EC%88%98:%ED%8A%B9%EC%88%98%EB%AC%B8%EC%84%9C" title="모든 특수 문서의 목록 [q]" accesskey="q">특수 문서 목록</a></li><li id="t-info"><a href="/w/index.php?title=%ED%8C%8C%EC%9D%BC:Dis_Uniform_distribution_CDF.svg&amp;action=info" title="이 문서에 대한 자세한 정보">문서 정보</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>다른 언어</h3>
+
+			<div class="body">
+									<ul>
+											</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wikimediafoundation.org/wiki/Privacy_policy" class="extiw" title="wmf:Privacy policy">개인정보 정책</a></li>
+											<li id="footer-places-about"><a href="/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EC%86%8C%EA%B0%9C" title="위키백과:소개">위키백과 소개</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%A9%B4%EC%B1%85_%EC%A1%B0%ED%95%AD" title="위키백과:면책 조항">면책 조항</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">개발자</a></li>
+											<li id="footer-places-cookiestatement"><a href="https://wikimediafoundation.org/wiki/Cookie_statement">쿠키 정책</a></li>
+											<li id="footer-places-mobileview"><a href="//ko.m.wikipedia.org/w/index.php?title=%ED%8C%8C%EC%9D%BC:Dis_Uniform_distribution_CDF.svg&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">모바일 보기</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="https://wikimediafoundation.org/"><img src="/static/images/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="//www.mediawiki.org/"><img src="/static/images/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/images/poweredby_mediawiki_132x47.png 1.5x, /static/images/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":317,"wgHostname":"mw1249"});});</script>
+	</body>
+</html>
